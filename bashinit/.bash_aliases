@@ -47,9 +47,8 @@ bind -r '\C-s'
 stty -ixon
 
 #spassiege scripte
-alias cowsay='/home/kevin.luedemann/Spiele/cow/bin/cowsay'
-alias uhr='date | /home/kevin.luedemann/Spiele/cow/bin/cowsay -f dragon'
-alias uhrw='watch "date | /home/kevin.luedemann/Spiele/cow/bin/cowsay -f dragon"'
+alias uhr='date | cowsay -f dragon'
+alias uhrw='watch "date | cowsay -f dragon"'
 
 #hexeditor in full version
 alias hexedit='hexedit -s -m --color'
