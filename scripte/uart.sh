@@ -1,0 +1,9 @@
+stty 9600 -F /dev/ttyAMA0
+Text="@150615164035N5133601E00956776G008+00266E0000N0000U0006"
+Text1="@150615164035N5133601E00956776"
+while :
+do
+	sleep 1s
+	echo $Text1 >> /dev/ttyAMA0
+	echo $Text1
+done
