@@ -1,0 +1,4 @@
+$\varphi$	$\pi$
+1_3g.dat	Messreihe 3g
+1_4g.dat	Messreihe 4g
+
