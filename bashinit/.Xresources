@@ -1,0 +1,5 @@
+xterm*title: MasterControle
+xterm*background: black
+xterm*foreground: green
+xterm*internalBorder: 5
+xterm+font: 10x20
