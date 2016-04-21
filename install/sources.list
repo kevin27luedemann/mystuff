@@ -1,0 +1,17 @@
+# 
+
+# deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20160124-16:11]/ jessie main
+
+deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20160124-16:11]/ jessie main
+
+deb http://ftp.de.debian.org/debian/ jessie main non-free contrib
+deb-src http://ftp.de.debian.org/debian/ jessie main non-free contrib
+
+deb http://security.debian.org/ jessie/updates main non-free contrib
+deb-src http://security.debian.org/ jessie/updates main non-free contrib
+
+deb http://httpredir.debian.org/debian jessie-backports main contrib non-free
+
+# jessie-updates, previously known as 'volatile'
+deb http://ftp.de.debian.org/debian/ jessie-updates main
+deb-src http://ftp.de.debian.org/debian/ jessie-updates main
