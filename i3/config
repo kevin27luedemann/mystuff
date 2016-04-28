@@ -74,7 +74,7 @@ bindsym $mod+c split h
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -94,8 +94,8 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $WORK1 "1: Browser"
-set $WORK2 "2:"
-set $WORK4 "4:"
+set $WORK2 "2"
+set $WORK4 "4"
 
 # switch to workspace
 bindsym $mod+1 workspace $WORK1

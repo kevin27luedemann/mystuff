@@ -63,6 +63,11 @@ rm -rf dvd/ ;
 
 #diable beeping
 rmmod pcspkr
+echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
+cp ../bashinit/.inputrc /home/$1/
+chmod 646 /home/$1/.inputrc
+cp ../bashinit/.xprofile /home/$1
+chmod 646 /home/$1/.xprofile
 
 if [ "$2" == "real" ] || [ "$3" == "real" ] || [ "$4" == "real" ]
 then
