@@ -26,6 +26,11 @@ if has("autocmd")
   autocmd BufNewFile,BufReadPre /media/*,/run/media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
   " start with spec file template
   autocmd BufNewFile *.spec 0r /usr/share/vim/vimfiles/template.spec
+  "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  " Load folds automatically
+  autocmd BufWinLeave *.* mkview
+  autocmd BufWinEnter *.* silent loadview
+  "------------------------------------------------------------------
   augroup END
 endif
 
@@ -63,6 +68,7 @@ endif
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 
+"+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Don't wake up system with blinking cursor:
 " http://www.linuxpowertop.org/known.php
 let &guicursor = &guicursor . ",a:blinkon0"
@@ -90,4 +96,7 @@ map <F8> :!pdflatex %<CR>
 map <F9> :!gnuplot %<CR>
 "F10 für nohlsearch
 :nmap <F10> :nohlsearch <CR>
-:imap <F10> :nohlsearch <CR>
+:imap <F10> <ESC> :nohlsearch <CR>
+"set tap as 3 spaces
+set tabstop=3
+"--------------------------------------------------------
