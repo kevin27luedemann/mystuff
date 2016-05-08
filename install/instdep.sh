@@ -25,29 +25,29 @@ fi
 #install texlive
 if [ "$2" == "texlive" ] || [ "$3" == "texlive" ] || [ "$4" == "texlive" ]
 then
-	apt-get install texlive-full
+	apt-get install -y texlive-full
 fi
 
 #add Resource Datai fuer xterminal
 cp ../bashinit/.Xresources /home/$1/
-chmod 646 /home/$1/.Xresources
+chmod 774 /home/$1/.Xresources
 #i3 einstellen
 cp ../i3/wallpaper.jpg /home/$1/Bilder/
-chmod 646 /home/$1/Bilder/wallpaper.jpg
+chmod 774 /home/$1/Bilder/wallpaper.jpg
 mkdir -p /home/$1/.i3/
 cp ../i3/config /home/$1/.i3/config
-chmod 646 /home/$1/.i3/config
+chmod 774 /home/$1/.i3/config
 #bash einstelln
 cp ../bashinit/.bashrc /home/$1/ ;
-chmod 646 /home/$1/.bashrc
+chmod 774 /home/$1/.bashrc
 cp ../bashinit/.bash_aliases /home/$1/ ;
-chmod 646 /home/$1/.bash_aliases
+chmod 774 /home/$1/.bash_aliases
 cp ../bashinit/.bash_profile /home/$1/ ;
-chmod 646 /home/$1/.bash_profile
+chmod 774 /home/$1/.bash_profile
 cp ../scripte/.falsch.sh /home/$1/ ;
-chmod 646 /home/$1/.falsch.sh
+chmod 774 /home/$1/.falsch.sh
 cp ../bashinit/.vimrc /home/$1/ ;
-chmod 646 /home/$1/.vimrc
+chmod 774 /home/$1/.vimrc
 
 #DVD codec css installieren
 apt-get install libdvdread4 ;
@@ -65,9 +65,9 @@ rm -rf dvd/ ;
 rmmod pcspkr
 echo "blacklist pcspkr" > /etc/modprobe.d/nobeep.conf
 cp ../bashinit/.inputrc /home/$1/
-chmod 646 /home/$1/.inputrc
+chmod 774 /home/$1/.inputrc
 cp ../bashinit/.xprofile /home/$1
-chmod 646 /home/$1/.xprofile
+chmod 774 /home/$1/.xprofile
 
 if [ "$2" == "real" ] || [ "$3" == "real" ] || [ "$4" == "real" ]
 then
