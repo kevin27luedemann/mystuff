@@ -13,6 +13,7 @@ alias kd='~/.falsch.sh kd'
 alias kls='~/.falsch.sh kls'
 alias lkd='~/.falsch.sh lkd'
 alias löa='~/.falsch.sh löa'
+alias lsb='xli `ls *.png`'
 
 #sprung Befehle
 alias ..='cd ..'
