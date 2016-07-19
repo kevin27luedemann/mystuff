@@ -1,6 +1,6 @@
 #ls Befehle
 alias ll='ls -l'
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -v'
 alias lla='ls -la'
 alias la='ls -a'
 alias lsd='~/.falsch.sh lsd'
