@@ -31,6 +31,8 @@ fi
 #add Resource Datai fuer xterminal
 cp ../bashinit/.Xresources /home/$1/
 chmod 774 /home/$1/.Xresources
+cp ../bashinit/.Xdefaults /home/$1/
+chmod 774 /home/$1/.Xdefaults
 #i3 einstellen
 cp ../i3/wallpaper.jpg /home/$1/Bilder/
 chmod 774 /home/$1/Bilder/wallpaper.jpg

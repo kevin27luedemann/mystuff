@@ -1,0 +1,296 @@
+!  xosview resources (override into your .Xdefaults file)
+
+! General Resources
+
+!*title:
+!*geometry:          +5+5
+!*geometry:          184x158
+!*display:
+*captions:           True
+*labels:             True
+*transparent:        False
+*meterLabelColor:    white
+*usedlabels:         True
+*usedLabelColor:     black
+*borderwidth:        0
+*font:               6x10
+*background:         black
+*foreground:         black
+*enableStipple:	     False ! Change to true to try beta stipple support.
+*samplesPerSec:      10
+*graphNumCols:       135   ! number of samples shown in a graph
+
+! Load Meter Resources
+! We don't need to enable the Decay option, as it is already time-averaged.
+
+*load:               True
+*loadCritColor:      red
+*loadWarnColor:      orange
+*loadProcColor:      blue
+*loadIdleColor:      green2
+*loadPriority:       20
+*loadCritThreshold:  auto  ! auto or number
+*loadWarnThreshold:  auto  ! auto or number
+*loadDecay:          False
+*loadGraph:          False
+*loadUsedFormat:     float
+*loadCpuSpeed:       True
+
+! Gfx Meter Resources ( Irix )
+
+*gfx:                True
+*gfxCritColor:       red
+*gfxWarnColor:       orange
+*gfxSwapColor:       blue
+*gfxIdleColor:       green2
+*gfxPriority:        1    ! don't change, until you know what you do
+*gfxCritThreshold:   120  ! swapbuffers/s per pipe
+*gfxWarnThreshold:   60   ! swapbuffers/s per pipe
+*gfxDecay:           False
+*gfxGraph:           False
+*gfxUsedFormat:	     autoscale
+
+! CPU Meter Resources
+
+*cpu:                True
+*cpuFields:          USR SYS WIO IDLE
+*cpuUserColor:       red
+*cpuNiceColor:       yellow
+*cpuSystemColor:     blue
+*cpuInterruptColor:  SkyBlue3
+*cpuSInterruptColor: OrangeRed
+*cpuWaitColor:       white
+*cpuFreeColor:       green2
+*cpuGuestColor:      DarkBlue
+*cpuNiceGuestColor:  gold
+*cpuStolenColor:     purple
+*cpuPriority:        1
+*cpuDecay:           True
+*cpuGraph:           False
+*cpuUsedFormat:	     percent
+*cpuFormat:          both   ! single, all, auto or both
+
+! Memory Meter Resources
+! Not all of these are used by a specific platform.
+
+*mem:                True
+*memKernelColor:     BlueViolet
+*memUsedColor:       red
+*memSharedColor:     yellow
+*memBufferColor:     DarkOrange
+*memSlabColor:	     DarkBlue
+*memMapColor:	     SkyBlue3
+*memCacheColor:      blue
+*memFreeColor:       green2
+*memTextColor:       white
+*memOtherColor:      grey
+*memActiveColor:     gold
+*memInactiveColor:   lightblue
+*memWiredColor:      orange
+*memPriority:        10
+*memDecay:           False
+*memGraph:           False
+*memUsedFormat:	     autoscale
+
+! Swap Meter Resources
+
+*swap:               False
+*swapUsedColor:      blue
+*swapFreeColor:      green2
+*swapReservedColor:  yellow
+*swapPriority:       10
+*swapDecay:          False
+*swapGraph:          False
+*swapUsedFormat:     autoscale
+
+
+! Page Meter Resources
+
+*page:               False
+*pageBandwidth:      120
+*pageInColor:        blue
+*pageOutColor:       red
+*pageIdleColor:      green2
+*pagePriority:       5
+*pageDecay:          False
+*pageGraph:          False
+*pageUsedFormat:     autoscale
+
+
+! Network Meter Resources
+
+*net:		     True
+*netBandwidth:       1000000  ! for 100Mbit/s
+!*netBandwidth:       10000000  ! for 100Mbit/s
+*netInColor:         blue
+*netOutColor:        red
+*netBackground:      green2
+*netPriority:        2
+*netDecay:           True
+*netGraph:           False
+*netUsedFormat:	     autoscale
+*netIface:           False
+
+! Linux-only resources:
+
+! Serial Meter Resources
+!
+! set 'True' for autodetection or give the baseaddress
+! (autodetection may fail sometimes, if the port is
+! locked by ppp/slip for example)
+
+!*serial0:            0x3f8
+!*serial1:            0x2f8
+!*serial2:            0x3e8
+!*serial3:            0x2e8
+*serial0:            False
+*serial1:            False
+*serial2:            False
+*serial3:            False
+*serial4:            False
+*serial5:            False
+*serial6:            False
+*serial7:            False
+*serial8:            False
+*serial9:            False
+*serialOnColor:      red
+*serialOffColor:     blue
+*serialPriority:     1
+
+! Interrupt Meter Resources
+
+*interrupts:         False
+*intSeparate:        False
+*intOnColor:         red
+*intOffColor:        blue
+*intPriority:	     1
+
+! Interrupt Rate Meter Resources
+*irqrate:            False
+*irqrateUsedColor:   red
+*irqrateIdleColor:   blue
+*irqratePriority:    1
+*irqrateUsedFormat:  autoscale
+*irqrateDecay:       True
+*irqrateGraph:       False
+
+! Battery Meter Resources
+
+*battery:            False
+*batteryLeftColor:   blue
+*batteryUsedColor:   red
+*batteryPriority:    50
+*batteryUsedFormat:  percent
+*batteryChargeColor: green2
+*batteryFullColor:   magenta
+*batteryLowColor:    orange
+*batteryCritColor:   red
+*batteryNoneColor:   grey
+
+! Wireless Meter Resources
+
+*wireless:            True
+*PoorQualityColor:    red
+*FairQualityColor:    orange
+*GoodQualityColor:    seagreen
+*wirelessUsedColor:   blue
+*wirelessPriority:    1
+*wirelessUsedFormat:  autoscale
+*wirelessDecay:       True
+
+! Disk Meter Resources
+
+*disk:               True
+*diskUsedColor:	     red
+*diskIdleColor:	     green2
+*diskWriteColor:     orange
+*diskReadColor:      blue
+*diskBandwidth:      100000000 ! 100MB/s
+*diskPriority:	     10
+*diskDecay:          True
+*diskUsedFormat:     autoscale
+*diskGraph:          True
+
+
+*RAID:                 False
+*RAIDdevicecount:      1
+*RAIDdiskOnlineColor:  green2
+*RAIDdiskFailureColor: red
+*RAIDresyncdoneColor:  yellow
+*RAIDresynctodoColor:  red
+*RAIDresynccompleteColor:  orange
+*RAIDPriority:         20
+*RAIDUsedFormat:       percent
+
+*horizontalMargin:      5
+*verticalMargin:        5
+*verticalSpacing:       5
+
+! Lms Temp
+*lmstemp:               False
+*lmstempActColor:	blue
+*lmstempHighColor:	red
+*lmstempIdleColor:      green2
+*lmstempPriority:       20
+*lmstempUsedFormat:     autoscale
+*lmstempHighest:	100
+! *lmstemp1:	temp
+! *lmstemp2:	remote_temp
+! for more sensors just add entries here
+! note, to configure sensors with same name in different subdirs,
+! use absolute paths
+! labels for above sensors (default = TMP)
+! *lmstempLabel1:    TMP
+! *lmstempLabel2:	RTMP
+
+*NFSDStats:       False
+*NFSDStatCallsColor:     green2
+*NFSDStatBadCallsColor: red
+*NFSDStatUDPColor:       yellow
+*NFSDStatTCPColor:       orange
+*NFSDStatIdleColor:      blue
+*NFSDStatDecay:		True
+*NFSDStatGraph:		False
+*NFSDStatUsedFormat:	percent
+
+*NFSStats:       False
+*NFSStatReTransColor:    SkyBlue3
+*NFSStatAuthRefrshColor: seagreen
+*NFSStatCallsColor:      green2
+*NFSStatIdleColor:       blue
+*NFSStatDecay:		True
+*NFSStatGraph:		False
+*NFSStatUsedFormat:	percent
+
+*acpitemp:                 False
+*acpitempActColor:         blue
+*acpitempHighColor:        red
+*acpitempIdleColor:        green2
+*acpitempPriority:         20
+*acpitempUsedFormat:       float
+*acpitempHighest:          100
+! *acpitemp1:                CPU
+! *acpitemp2:                MB
+
+*coretemp:                 True
+*coretempActColor:         blue
+*coretempHighColor:        red
+*coretempIdleColor:        green2
+*coretempPriority:         20
+*coretempUsedFormat:       float
+*coretempDisplayType:      separate    ! separate, maximum or average
+! *coretemp1Package:         0
+
+*bsdsensor:               False
+*bsdsensorActColor:       blue
+*bsdsensorHighColor:      red
+*bsdsensorIdleColor:      green2
+*bsdsensorPriority:       20
+*bsdsensorUsedFormat:     float
+! NetBSD example
+! *bsdsensor1:              coretemp0.cur-value
+! OpenBSD example
+! *bsdsensor1:              it0.temp1
+! *bsdsensorLabel1:         CPU0
+! *bsdsensorHigh1:          100
+
