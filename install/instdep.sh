@@ -30,26 +30,26 @@ fi
 
 #add Resource Datai fuer xterminal
 cp ../bashinit/.Xresources /home/$1/
-chmod 774 /home/$1/.Xresources
+chmod 776 /home/$1/.Xresources
 cp ../bashinit/.Xdefaults /home/$1/
-chmod 774 /home/$1/.Xdefaults
+chmod 776 /home/$1/.Xdefaults
 #i3 einstellen
 cp ../i3/wallpaper.jpg /home/$1/Bilder/
-chmod 774 /home/$1/Bilder/wallpaper.jpg
+chmod 776 /home/$1/Bilder/wallpaper.jpg
 mkdir -p /home/$1/.i3/
 cp ../i3/config /home/$1/.i3/config
-chmod 774 /home/$1/.i3/config
+chmod 776 /home/$1/.i3/config
 #bash einstelln
 cp ../bashinit/.bashrc /home/$1/ ;
-chmod 774 /home/$1/.bashrc
+chmod 776 /home/$1/.bashrc
 cp ../bashinit/.bash_aliases /home/$1/ ;
-chmod 774 /home/$1/.bash_aliases
+chmod 776 /home/$1/.bash_aliases
 cp ../bashinit/.bash_profile /home/$1/ ;
-chmod 774 /home/$1/.bash_profile
+chmod 776 /home/$1/.bash_profile
 cp ../scripte/.falsch.sh /home/$1/ ;
-chmod 774 /home/$1/.falsch.sh
+chmod 776 /home/$1/.falsch.sh
 cp ../bashinit/.vimrc /home/$1/ ;
-chmod 774 /home/$1/.vimrc
+chmod 776 /home/$1/.vimrc
 
 #DVD codec css installieren
 apt-get install libdvdread4 ;
