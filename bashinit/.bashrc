@@ -102,7 +102,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 xrdb ~/.Xresources
-
+eval "$(dircolors ~/.dircolors)";
 cd ~
-
-

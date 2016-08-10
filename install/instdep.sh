@@ -42,6 +42,8 @@ chmod 776 /home/$1/.i3/config
 #bash einstelln
 cp ../bashinit/.bashrc /home/$1/ ;
 chmod 776 /home/$1/.bashrc
+cp ../bashinit/.dircolors /home/$1/ ;
+chmod 776 /home/$1/.bashrc
 cp ../bashinit/.bash_aliases /home/$1/ ;
 chmod 776 /home/$1/.bash_aliases
 cp ../bashinit/.bash_profile /home/$1/ ;
