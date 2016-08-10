@@ -103,4 +103,4 @@ fi
 
 xrdb ~/.Xresources
 eval "$(dircolors ~/.dircolors)";
-cd ~
+#cd ~
