@@ -43,7 +43,9 @@ chmod 776 /home/$1/.i3/config
 cp ../bashinit/.bashrc /home/$1/ ;
 chmod 776 /home/$1/.bashrc
 cp ../bashinit/.dircolors /home/$1/ ;
-chmod 776 /home/$1/.bashrc
+chmod 776 /home/$1/.dircolors
+cp ../bashinit/rc.conf /home/$1/.config/ranger/ ;
+chmod 776 /home/$1/.config/ranger/rc.conf
 cp ../bashinit/.bash_aliases /home/$1/ ;
 chmod 776 /home/$1/.bash_aliases
 cp ../bashinit/.bash_profile /home/$1/ ;
