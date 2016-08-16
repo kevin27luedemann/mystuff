@@ -35,6 +35,9 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " use the powerline project
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+" latex-suite
+Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
