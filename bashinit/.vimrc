@@ -1,68 +1,107 @@
-if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
-   set fileencodings=ucs-bom,utf-8,latin1
-endif
+set nocompatible              " required
+filetype off                  " required
 
-set nocompatible	" Use Vim defaults (much better!)
-set bs=indent,eol,start		" allow backspacing over everything in insert mode
-"set ai			" always set autoindenting on
-"set backup		" keep a backup file
-set viminfo='20,\"50	" read/write a .viminfo file, don't store more
-			" than 50 lines of registers
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" Only do this part when compiled with support for autocommands
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+" simple folding
+Plugin 'tmhedberg/SimpylFold'
+
+"Autocompletion plugin
+Plugin 'Valloric/YouCompleteMe'
+
+" check syntax after each save
+Plugin 'scrooloose/syntastic'
+
+" PEP8 checking
+Plugin 'nvie/vim-flake8'
+
+" use a goos Color Scheme
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+
+" Filetree navigation
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+" use the powerline project
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"specify where to split
+set splitbelow
+set splitright
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Enable folding with the spacebar
+nnoremap <space> za
+" see docstrings for folded code
+let g:SimpylFold_docstring_preview=1
+" get PEP8 standards for python
 if has("autocmd")
-  augroup fedora
-  autocmd!
-  " In text files, always limit the width of text to 78 characters
-  " autocmd BufRead *.txt set tw=78
-  " When editing a file, always jump to the last cursor position
-  autocmd BufReadPost *
-  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
-  \   exe "normal! g'\"" |
-  \ endif
-  " don't write swapfile on most commonly used directories for NFS mounts or USB sticks
-  autocmd BufNewFile,BufReadPre /media/*,/run/media/*,/mnt/* set directory=~/tmp,/var/tmp,/tmp
-  " start with spec file template
-  autocmd BufNewFile *.spec 0r /usr/share/vim/vimfiles/template.spec
-  "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  " Load folds automatically
-  autocmd BufWinLeave *.* mkview
-  autocmd BufWinEnter *.* silent loadview
-  "------------------------------------------------------------------
-  augroup END
+	au BufNewFile,BufRead *.py
+    	\ set tabstop=4
+    	\ set softtabstop=4
+    	\ set shiftwidth=4
+    	\ set textwidth=79
+    	\ set expandtab
+    	\ set autoindent
+    	\ set fileformat=unix
+" get standards for other formats
+	au BufNewFile,BufRead *.js, *.html, *.css
+    	\ set tabstop=2
+    	\ set softtabstop=2
+    	\ set shiftwidth=2
 endif
-
-if has("cscope") && filereadable("/usr/bin/cscope")
-   set csprg=/usr/bin/cscope
-   set csto=0
-   set cst
-   set nocsverb
-   " add any database in current directory
-   if filereadable("cscope.out")
-      cs add $PWD/cscope.out
-   " else add database pointed to by environment
-   elseif $CSCOPE_DB != ""
-      cs add $CSCOPE_DB
-   endif
-   set csverb
+" mark extra whitespaces
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" use UTF8 code
+set encoding=utf-8
+" YCM Python custamizations
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+	project_base_dir = os.environ['VIRTUAL_ENV']
+	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+	execfile(activate_this, dict(__file__=activate_this))
+EOF
+" syntaxhiglighting for python
+let python_highlight_all=1
+syntax on
+" define whenn to use color Scheme
+if has('gui_running')
+	set background=dark
+	colorscheme solarized
+else
+	colorscheme zenburn
 endif
+call togglebg#map("<F5>")
+" hide .pyc files
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
-
-filetype plugin on
-
-if &term=="xterm"
-     set t_Co=8
-     set t_Sb=[4%dm
-     set t_Sf=[3%dm
-endif
+" load NERD Tree for key
+map <C-n> :NERDTreeToggle<CR>
 
 " Set Beeping off
 set noerrorbells visualbell t_vb=
@@ -94,6 +133,8 @@ map <F8> :!pdflatex %<CR>
 :vmap <c-s> <Esc><c-s>
 "F09 als gnuplot plot.gp
 map <F9> :!gnuplot %<CR>
+"F09 als gnuplot plot.gp
+map <F11> :!python %<CR>
 "F10 für nohlsearch
 :nmap <F10> :nohlsearch <CR>
 :imap <F10> <ESC> :nohlsearch <CR>
