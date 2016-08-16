@@ -27,6 +27,8 @@ if [ "$2" == "texlive" ] || [ "$3" == "texlive" ] || [ "$4" == "texlive" ]
 then
 	apt-get install -y texlive-full
 fi
+#get vim bundel manager vundle
+git clone https://github.com/gmarik/Vundle.vim.git /home/$1/.vim/bundle/Vundle.vim
 
 #add Resource Datai fuer xterminal
 cp ../bashinit/.Xresources /home/$1/
