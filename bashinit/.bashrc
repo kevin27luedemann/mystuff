@@ -101,6 +101,12 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+if [ $SSH_AGENT_PID ]; then
+    if [[ $(ssh-add -l) != *id_?sa* ]]; then
+        ssh-add -t 2h  ## Haltbarkeit von 2 Std.
+    fi
+fi
+
 xrdb ~/.Xresources
 eval "$(dircolors ~/.dircolors)";
 #cd ~
