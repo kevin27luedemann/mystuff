@@ -7,9 +7,9 @@ cp ./sources.list /etc/apt/
 apt-get update
 apt-get upgrade -y
 #erste handvoll wichtige programme
-apt-get install -y okular filezilla ncdu cowsay fortune mc feh ImageMagick arandr gcc xterm ranger hexedit i3 i3blocks pkg-config gtk+-2.0 gtk+-3.0 mpc mpd htop xterm xli xosview
+apt-get install -y okular filezilla ncdu cowsay fortune mc feh ImageMagick arandr gcc xterm ranger hexedit i3 i3blocks pkg-config gtk+-2.0 gtk+-3.0 mpc mpd htop xterm xli xosview avrdude avrdude-doc cmake
 #vim mit latex installieren
-apt-get install -y vim-gtk vim-python-jedi vim-addon-manager vim-latexsuite vim-syntax-gtk
+apt-get install -y vim-gtk vim
 #google chrome installieren
 apt-get install -y chromium
 #install python
