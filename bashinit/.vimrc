@@ -13,16 +13,16 @@ Plugin 'gmarik/Vundle.vim'
 
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 " simple folding
-Plugin 'tmhedberg/SimpylFold'
+"Plugin 'tmhedberg/SimpylFold'
 
 "Autocompletion plugin
 Plugin 'Valloric/YouCompleteMe'
 
 " check syntax after each save
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 
 " PEP8 checking
-Plugin 'nvie/vim-flake8'
+"Plugin 'nvie/vim-flake8'
 
 " use a goos Color Scheme
 Plugin 'jnurmine/Zenburn'
@@ -33,14 +33,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 " use the powerline project
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " latex-suite
 Plugin 'LaTeX-Suite-aka-Vim-LaTeX'
 
 
 call vundle#end()            " required
-filetype plugin indent on    " required
+filetype plugin on    " required
 
 "specify where to split
 set splitbelow
@@ -51,27 +51,30 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 " Enable folding
-set foldmethod=indent
-set foldlevel=99
+set foldmethod=manual
+"set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
+vnoremap <space> zf
 " see docstrings for folded code
-let g:SimpylFold_docstring_preview=1
+"let g:SimpylFold_docstring_preview=1
 " get PEP8 standards for python
 if has("autocmd")
-	au BufNewFile,BufRead *.py
-    	\ set tabstop=4
-    	\ set softtabstop=4
-    	\ set shiftwidth=4
-    	\ set textwidth=79
-    	\ set expandtab
-    	\ set autoindent
-    	\ set fileformat=unix
+	autocmd BufWinLeave *.* mkview
+	autocmd BufWinEnter *.* silent loadview
+"	au BufNewFile,BufRead *.py
+"    	\ set tabstop=4
+"    	\ set softtabstop=4
+"    	\ set shiftwidth=4
+"    	\ set textwidth=79
+"    	\ set expandtab
+"    	\ set autoindent
+"    	\ set fileformat=unix
 " get standards for other formats
-	au BufNewFile,BufRead *.js, *.html, *.css
-    	\ set tabstop=2
-    	\ set softtabstop=2
-    	\ set shiftwidth=2
+"	au BufNewFile,BufRead *.js, *.html, *.css
+"    	\ set tabstop=2
+"    	\ set softtabstop=2
+"    	\ set shiftwidth=2
 endif
 " mark extra whitespaces
 "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -81,14 +84,14 @@ set encoding=utf-8
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-	project_base_dir = os.environ['VIRTUAL_ENV']
-	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-	execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"	project_base_dir = os.environ['VIRTUAL_ENV']
+"	activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"	execfile(activate_this, dict(__file__=activate_this))
+"EOF
 " syntaxhiglighting for python
 let python_highlight_all=1
 syntax on
