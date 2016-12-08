@@ -11,7 +11,10 @@ Legend of workhour time (day) syntax:
 time in seconds <tab> timestamp <tab> type code
 
 Legend of workhour time systax:
-time in seconds <tab> timestamp <tab> workhours <tab> pausehours
+time in seconds <tab> timestamp <tab> workhours <tab> workhourse stamp <tab> pausehours <tab> pausehours stamp <tab> total time <tab> total time stamp <tab> work pause ratio <tab> work percentage <tab> pause percentage
+
+Legend of workhour time print systax:
+timestamp <tab> workhourse stamp <tab> pausehours stamp <tab> total time stamp <tab> work pause ratio <tab> work percentage <tab> pause percentage
 
 Legend of type codes:
     0: in time
@@ -150,22 +153,68 @@ def calculate_dayworktime(name):
     time_in_day = time_in_day - pause_time
     return time_in_day, pause_time
 
+def calculate_dayworktime_before_end(name,ts):
+    #parser for the day worktime
+    my_file = Path(name)
+    assert my_file.is_file() , "File does not exist"
+    timest, formated, code = get_hours(name)
+    time_in_day = 0
+    pause_time = 0
+    assert code[0]==0 , "did not clock in"
+    for i in range(len(code)):
+        if code[i] == 0:
+            time_start = timest[i]
+            time_stop  = 0.0
+        elif code[i] == 2:
+            pause_start = timest[i]
+            pause_stop  = 0.0
+        elif code[i] == 3:
+            pause_stop = timest[i]
+            pause_time = pause_time + (pause_stop-pause_start)
+        elif code[i] == 1:
+            time_stop = timest[i]
+            time_in_day = time_in_day + (time_stop-time_start)
+    time_stop = ts
+    time_in_day = time_in_day + (time_stop-time_start)
+
+    time_in_day = time_in_day - pause_time
+    return time_in_day, pause_time
+
 def logg_daywork(name,ts):
     formated_time = dt.datetime.fromtimestamp(ts).strftime('%H:%M:%S_%d.%m.%y')
     formated_date = dt.datetime.fromtimestamp(ts).strftime('%y%m%d')
     work, pause = calculate_dayworktime(name+"_"+formated_date+".txt")
     work_stamp = dt.datetime.fromtimestamp(work).strftime('%H:%M:%S')
     pause_stamp = dt.datetime.fromtimestamp(pause).strftime('%H:%M:%S')
-    logg = "{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp)
+    total_time = work+pause
+    total_time_stamp = dt.datetime.fromtimestamp(total_time).strftime('%H:%M:%S')
+    work_pause_ratio = work/pause
+    work_percent = work/total_time*100.0
+    pause_percent = pause/total_time*100.0
+    logg = "{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp,total_time,total_time_stamp,work_pause_ratio,work_percent,pause_percent)
+    #logg = "{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp)
     append_time(name+".txt",logg)
 
 def print_daywork(name,ts):
     formated_time = dt.datetime.fromtimestamp(ts).strftime('%H:%M:%S_%d.%m.%y')
     formated_date = dt.datetime.fromtimestamp(ts).strftime('%y%m%d')
-    work, pause = calculate_dayworktime(name+"_"+formated_date+".txt")
+    name_date = name+"_"+formated_date+".txt"
+    my_file = Path(name_date)
+    if my_file.is_file():
+        a,b,c = decode_line(tail(open(name_date),1))
+        assert c == 3 or c == 1 , "still in pause"
+        if c == 1:
+            work, pause = calculate_dayworktime(name_date)
+        else:
+            work, pause = calculate_dayworktime_before_end(name_date,ts)
     work_stamp = dt.datetime.fromtimestamp(work).strftime('%H:%M:%S')
     pause_stamp = dt.datetime.fromtimestamp(pause).strftime('%H:%M:%S')
-    logg = "{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp)
+    total_time = work+pause
+    total_time_stamp = dt.datetime.fromtimestamp(total_time).strftime('%H:%M:%S')
+    work_pause_ratio = work/pause
+    work_percent = work/total_time*100.0
+    pause_percent = pause/total_time*100.0
+    logg = "{}\t{}\t{}\t{}\t{:.02f}\t{:.01f}%\t{:.01f}%\n".format(formated_time,work_stamp,pause_stamp,total_time_stamp,work_pause_ratio,work_percent,pause_percent)
     print logg,
 
 def workhours(name, hours_per_month):
@@ -187,9 +236,9 @@ def main():
             pause_in_time(path+name,ts)
         if sys.argv[1] == "pauseout" or sys.argv[1] == "pout":
             pause_out_time(path+name,ts)
-        if sys.argv[1] == "daycalc":
+        if sys.argv[1] == "daycalc" or sys.argv[1] == "dc":
             logg_daywork(path+name,ts)
-        if sys.argv[1] == "daywork":
+        if sys.argv[1] == "daywork" or sys.argv[1] == "dw":
             print_daywork(path+name,ts)
     else:
         workhours(name,hours_per_month)
