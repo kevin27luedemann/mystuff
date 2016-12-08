@@ -159,6 +159,15 @@ def logg_daywork(name,ts):
     logg = "{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp)
     append_time(name+".txt",logg)
 
+def print_daywork(name,ts):
+    formated_time = dt.datetime.fromtimestamp(ts).strftime('%H:%M:%S_%d.%m.%y')
+    formated_date = dt.datetime.fromtimestamp(ts).strftime('%y%m%d')
+    work, pause = calculate_dayworktime(name+"_"+formated_date+".txt")
+    work_stamp = dt.datetime.fromtimestamp(work).strftime('%H:%M:%S')
+    pause_stamp = dt.datetime.fromtimestamp(pause).strftime('%H:%M:%S')
+    logg = "{}\t{}\t{}\t{}\t{}\t{}\n".format(ts,formated_time,work,work_stamp,pause,pause_stamp)
+    print logg,
+
 def workhours(name, hours_per_month):
     print "You worked for ..."
     timest, formated, code = get_hours(name)
@@ -180,6 +189,8 @@ def main():
             pause_out_time(path+name,ts)
         if sys.argv[1] == "daycalc":
             logg_daywork(path+name,ts)
+        if sys.argv[1] == "daywork":
+            print_daywork(path+name,ts)
     else:
         workhours(name,hours_per_month)
 
