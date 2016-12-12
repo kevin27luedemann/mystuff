@@ -100,7 +100,7 @@ def out_time(name,ts):
         assert c != 1 , "already clocked out"
     logg = "{}\t{}\t{}\n".format(ts,formated_time,"1")
     append_time(name+"_"+formated_date+".txt",logg)
-    print "Out time {} logged".format(ts)
+    print "Out time {} logged".format(formated_time)
 
 def pause_in_time(name,ts):
     formated_time = dt.datetime.fromtimestamp(ts).strftime('%H:%M:%S_%d.%m.%y')
@@ -112,7 +112,7 @@ def pause_in_time(name,ts):
         assert c == 0 or c == 3 , "not clocked in or pause not ended"
     logg = "{}\t{}\t{}\n".format(ts,formated_time,"2")
     append_time(name,logg)
-    print "Pause in time {} logged".format(ts)
+    print "Pause in time {} logged".format(formated_time)
 
 def pause_out_time(name,ts):
     formated_time = dt.datetime.fromtimestamp(ts).strftime('%H:%M:%S_%d.%m.%y')
@@ -124,7 +124,7 @@ def pause_out_time(name,ts):
         assert c == 2 , "pause not begun"
     logg = "{}\t{}\t{}\n".format(ts,formated_time,"3")
     append_time(name_out,logg)
-    print "Pause out time {} logged".format(ts)
+    print "Pause out time {} logged".format(formated_time)
 
 
 def calculate_dayworktime(name):
