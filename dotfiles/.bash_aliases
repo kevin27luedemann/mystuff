@@ -110,5 +110,8 @@ alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@mauri
 
 
 #Openfoam
-. /opt/openfoam-dev/etc/bashrc
-. /opt/openfoam8/etc/bashrc
+FILE=/opt/openfoam-dev/etc/bashrc
+if test -f "$FILE"; then
+	. /opt/openfoam-dev/etc/bashrc
+	. /opt/openfoam8/etc/bashrc
+fi
