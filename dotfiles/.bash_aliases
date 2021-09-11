@@ -44,12 +44,12 @@ alias pushpokemontoserverlocal='rsync -azv --update --progress /home/luedemann/V
 alias pullpokemonfromserverlocal='rsync -azv --update --progress 192.168.2.119:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
 
 #ssh Befehle
-alias sshcip='ssh -C kevin.luedemann@login.cip.physik.uni-goettingen.de'
-alias sshcipx='ssh -X -C kevin.luedemann@login.cip.physik.uni-goettingen.de'
-alias sshhpc='ssh -X -C kluedem@gwdu103.gwdg.de'
+alias sshcip='ssh -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
+alias sshcipx='ssh -X -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
+alias sshhpc='ssh -X -A kluedem@gwdu103.gwdg.de'
 alias sshhome='ssh -X -A -C luedemann@kevin-home-physik.de'
 alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@kevin-home-physik.de'
-alias sshwork='ssh -X -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
+alias sshwork='ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias vpnup='sudo nmcli connection up GWDG --ask'
 alias vpndown='sudo nmcli connection down GWDG'
 
