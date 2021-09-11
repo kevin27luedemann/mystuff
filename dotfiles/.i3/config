@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
+set $sub Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,9 +30,13 @@ font pango:monospace 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#lockscreen
+bindsym $sub+Shift+l exec i3lock -t -i /home/luedemann/Downloads/logo_design/wallpaper_logo_1080.png
+
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec xterm -fa 'Monospace' -fs 10
+bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec xterm -fa 'Monospace' -fs 11
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -67,6 +72,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move workspace to left or right monitor
+bindsym $mod+Shift+x move workspace to output right
+bindsym $mod+Shift+y move workspace to output left
+
 # split in horizontal orientation
 bindsym $mod+c split h
 
@@ -90,40 +99,90 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+#use as screensaver
+bindsym $mod+Shift+s exec --no-startup-id feh -Y -x -q -D 10 -B black -F -Z -z -r /home/luedemann/Bilder/_besser/ /home/luedemann/Bilder/Hintergrundbilder/ /home/luedemann/usb/bilder/nice/
+
+#changes wallpaper
+#bindsym $mod+Shift+b exec --no-startup-id feh --bg-fill /home/luedemann/Bilder/wallpaper2.jpg
+bindsym $mod+Shift+b exec --no-startup-id nitrogen --restore
+
+#use media keys
+#bindcode 172 exec --no-startup-id mpc toggle
+#bindcode 174 exec --no-startup-id mpc stop
+#bindcode 173 exec --no-startup-id mpc prev
+#bindcode 171 exec --no-startup-id mpc next
+
+#bindsym $sub+p exec --no-startup-id mpc toggle
+#bindsym $sub+s exec --no-startup-id mpc stop
+#bindsym $sub+r exec --no-startup-id mpc prev
+#bindsym $sub+n exec --no-startup-id mpc next
+
+#used for spotify client
+bindsym $sub+p exec --no-startup-id spotifycli --playpause
+bindsym $sub+s exec --no-startup-id spotifycli --pause
+bindsym $sub+r exec --no-startup-id spotifycli --prev
+bindsym $sub+n exec --no-startup-id spotifycli --next
+
+#monitor alignement
+bindsym $sub+Shift+w exec --no-startup-id /home/luedemann/.screenlayout/center.sh
+bindsym $sub+Shift+s exec --no-startup-id /home/luedemann/.screenlayout/full.sh
+
+bindcode 121 exec --no-startup-id ~/.i3/muting.sh
+bindcode 122 exec --no-startup-id amixer -c 0 set Master 2%-
+bindcode 123 exec --no-startup-id amixer -c 0 set Master 2%+
+
+bindsym $mod+numbersign exec --no-startup-id ~/.i3/muting.sh
+bindsym $mod+minus exec --no-startup-id amixer -c 0 set Master 2%-
+bindsym $mod+plus exec --no-startup-id amixer -c 0 set Master 2%+
+
+
 # focus the child container
 #bindsym $mod+d focus child
 
-set $WORK1 "1: Browser"
+set $WORK1 "1"
 set $WORK2 "2"
+set $WORK3 "3"
 set $WORK4 "4"
+set $WORK5 "5"
+set $WORK6 "6"
+set $WORK7 "7"
+set $WORK8 "8"
+set $WORK9 "9"
+set $WORK10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $WORK1
 bindsym $mod+2 workspace $WORK2
-bindsym $mod+3 workspace 3
+bindsym $mod+3 workspace $WORK3
 bindsym $mod+4 workspace $WORK4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+5 workspace $WORK5
+bindsym $mod+6 workspace $WORK6
+bindsym $mod+7 workspace $WORK7
+bindsym $mod+8 workspace $WORK8
+bindsym $mod+9 workspace $WORK9
+bindsym $mod+0 workspace $WORK10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WORK1
 bindsym $mod+Shift+2 move container to workspace $WORK2
-bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+3 move container to workspace $WORK3
 bindsym $mod+Shift+4 move container to workspace $WORK4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+5 move container to workspace $WORK5
+bindsym $mod+Shift+6 move container to workspace $WORK6
+bindsym $mod+Shift+7 move container to workspace $WORK7
+bindsym $mod+Shift+8 move container to workspace $WORK8
+bindsym $mod+Shift+9 move container to workspace $WORK9
+bindsym $mod+Shift+0 move container to workspace $WORK10
 
-assign [class="Firefox"] $WORK1
+#assign [class="Chromium"] $WORK1
+#assign [class="Google-chrome"] $WORK1
+#assign [class="Transmission-gtk"] $WORK8
 
 #color of windows
+
+#start work10 on secondary screen
+workspace $WORK10 output DVI-I-3
+workspace $WORK1  output DVI-I-2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -140,16 +199,16 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width  5 px or 5 ppt
+        bindsym j resize grow height   5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width    5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height  5 px or 5 ppt
+        bindsym Up resize shrink height  5 px or 5 ppt
+        bindsym Right resize grow width  5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -161,10 +220,30 @@ bindsym $mod+r mode "resize"
 #Raender entfernen
 hide_edge_borders both
 
+#color settings
+# class                 border  backgr. text    indicator child_border
+#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          #2f343a #900000 #ffffff #900000   #900000
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #ff0000 #ff0000 #ffffff #ff0000   #ff0000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #000000
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        #status_command i3status
+        status_command /home/luedemann/.i3/statusbar.sh
+	colors{
+		background #ff0000
+	}
 }
 
-exec firefox
+exec_always feh --bg-max /home/luedemann/Bilder/wallpaper_logo.png
+#exec_always --no-startup-id nitrogen --restore
+exec /home/luedemann/.screenlayout/center.sh
+#exec_always pulseaudio --kill
+#exec_always pulseaudio --start
+#exec_always amixer -c 0 set Headphone 100% unmute
