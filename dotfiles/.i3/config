@@ -248,4 +248,3 @@ bar {
 }
 
 exec_always --no-startup-id feh --bg-max /home/luedemann/Documents/mystuff/dotfiles/wallpaper_logo.png
-exec /home/luedemann/.screenlayout/center.sh
