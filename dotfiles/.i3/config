@@ -249,7 +249,3 @@ bar {
 
 exec_always --no-startup-id feh --bg-max /home/luedemann/Bilder/wallpaper_logo.png
 exec /home/luedemann/.screenlayout/center.sh
-if [ "$HOST" = "Atlas" ]; then
-	exec xinput --set-prop 8 304 0, 1
-	exec xinput --set-prop 8 301 -0.4
-fi

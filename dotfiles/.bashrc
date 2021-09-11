@@ -135,3 +135,9 @@ unset HISTFILE
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#Set the mouse speed for different computers
+if [ "$HOST" = "kevinserver" ]; then
+	exec xinput --set-prop 8 304 0, 1
+	exec xinput --set-prop 8 301 -0.4
+fi
