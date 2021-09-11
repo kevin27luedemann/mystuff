@@ -14,7 +14,7 @@ set $sub Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 11
+font pango:monospace 13
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -103,7 +103,6 @@ bindsym $mod+a focus parent
 bindsym $mod+Shift+s exec --no-startup-id feh -Y -x -q -D 10 -B black -F -Z -z -r /home/luedemann/Bilder/_besser/ /home/luedemann/Bilder/Hintergrundbilder/ /home/luedemann/usb/bilder/nice/
 
 #changes wallpaper
-#bindsym $mod+Shift+b exec --no-startup-id feh --bg-fill /home/luedemann/Bilder/wallpaper2.jpg
 bindsym $mod+Shift+b exec --no-startup-id nitrogen --restore
 
 #use media keys
@@ -126,14 +125,20 @@ bindsym $sub+n exec --no-startup-id spotifycli --next
 #monitor alignement
 bindsym $sub+Shift+w exec --no-startup-id /home/luedemann/.screenlayout/center.sh
 bindsym $sub+Shift+s exec --no-startup-id /home/luedemann/.screenlayout/full.sh
+bindsym $sub+Shift+a exec --no-startup-id /home/luedemann/.screenlayout/left.sh
+bindsym $sub+Shift+d exec --no-startup-id /home/luedemann/.screenlayout/right.sh
 
 bindcode 121 exec --no-startup-id ~/.i3/muting.sh
-bindcode 122 exec --no-startup-id amixer -c 0 set Master 2%-
-bindcode 123 exec --no-startup-id amixer -c 0 set Master 2%+
+bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-
+bindcode 123 exec --no-startup-id amixer -c 1 set Master 2%+
 
 bindsym $mod+numbersign exec --no-startup-id ~/.i3/muting.sh
-bindsym $mod+minus exec --no-startup-id amixer -c 0 set Master 2%-
-bindsym $mod+plus exec --no-startup-id amixer -c 0 set Master 2%+
+bindsym $mod+minus exec --no-startup-id amixer -c 1 set Master 2%-
+bindsym $mod+plus exec --no-startup-id amixer -c 1 set Master 2%+
+
+bindsym $sub+Shift+y exec --no-startup-id ~/.i3/muting.sh
+bindsym $sub+less exec --no-startup-id amixer -c 1 set Master 2%-
+bindsym $sub+Shift+less exec --no-startup-id amixer -c 1 set Master 2%+
 
 
 # focus the child container
@@ -149,6 +154,7 @@ set $WORK7 "7"
 set $WORK8 "8"
 set $WORK9 "9"
 set $WORK10 "10"
+set $WORK11 "11"
 
 # switch to workspace
 bindsym $mod+1 workspace $WORK1
@@ -161,6 +167,7 @@ bindsym $mod+7 workspace $WORK7
 bindsym $mod+8 workspace $WORK8
 bindsym $mod+9 workspace $WORK9
 bindsym $mod+0 workspace $WORK10
+bindsym $mod+ssharp workspace $WORK11
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WORK1
@@ -173,16 +180,12 @@ bindsym $mod+Shift+7 move container to workspace $WORK7
 bindsym $mod+Shift+8 move container to workspace $WORK8
 bindsym $mod+Shift+9 move container to workspace $WORK9
 bindsym $mod+Shift+0 move container to workspace $WORK10
-
-#assign [class="Chromium"] $WORK1
-#assign [class="Google-chrome"] $WORK1
-#assign [class="Transmission-gtk"] $WORK8
-
-#color of windows
+bindsym $mod+Shift+ssharp move container to workspace $WORK11
 
 #start work10 on secondary screen
-workspace $WORK10 output DVI-I-3
-workspace $WORK1  output DVI-I-2
+workspace $WORK10 output DVI-I-1
+workspace $WORK1  output HDMI-1
+workspace $WORK9  output DVI-D-0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -217,33 +220,36 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-#Raender entfernen
+#Remove boarders
 hide_edge_borders both
 
 #color settings
 # class                 border  backgr. text    indicator child_border
-#client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
 client.focused          #2f343a #900000 #ffffff #900000   #900000
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #ff0000 #ff0000 #ffffff #ff0000   #ff0000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #000000
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
         #status_command i3status
         status_command /home/luedemann/.i3/statusbar.sh
+        #status_command i3blocks -c $HOME/.config/i3blocks/config
 	colors{
-		background #ff0000
+		background #d50000
+		separator #000080
+
 	}
+	separator_symbol " | "
+	tray_output primary
 }
 
-exec_always feh --bg-max /home/luedemann/Bilder/wallpaper_logo.png
-#exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh --bg-max /home/luedemann/Bilder/wallpaper_logo.png
 exec /home/luedemann/.screenlayout/center.sh
-#exec_always pulseaudio --kill
-#exec_always pulseaudio --start
-#exec_always amixer -c 0 set Headphone 100% unmute
+if [ "$HOST" = "Atlas" ]; then
+	exec xinput --set-prop 8 304 0, 1
+	exec xinput --set-prop 8 301 -0.4
+fi
