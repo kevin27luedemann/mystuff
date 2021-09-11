@@ -3,7 +3,7 @@
 i3status | while :
 do
 	read line
-	volume=`amixer -M -c 0 get Master | grep "Mono: Playback"`
+	volume=`amixer -M -c 1 get Master | grep "Mono: Playback"`
 	volume=${volume#*[}
 	volume=${volume%]*}
 	volume=${volume%]*}
