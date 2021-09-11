@@ -3,3 +3,8 @@ ln -s /home/$HOME/Documents/mystuff/dotfiles/.i3status.conf /home/$HOME/
 ln -s /home/$HOME/Documents/mystuff/dotfiles/.bashrc /home/$HOME/
 ln -s /home/$HOME/Documents/mystuff/dotfiles/.bash_aliases /home/$HOME/
 ln -s /home/$HOME/Documents/mystuff/dotfiles/.bash_profile /home/$HOME/
+ln -s /home/$HOME/Documents/mystuff/dotfiles/.vimrc /home/$HOME/
+ln -s /home/$HOME/Documents/mystuff/dotfiles/.inputrc /home/$HOME/
+ln -s /home/$HOME/Documents/mystuff/dotfiles/.Xresources /home/$HOME/
+ln -s /home/$HOME/Documents/mystuff/dotfiles/.xprofile /home/$HOME/
+ln -s /home/$HOME/Documents/mystuff/dotfiles/.Xdefaults /home/$HOME/
