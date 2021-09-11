@@ -8,3 +8,4 @@ ln -s $HOME/Documents/mystuff/dotfiles/.inputrc 	$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.Xresources 	$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.xprofile 	$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.Xdefaults 	$HOME/
+ln -s $HOME/Documents/mystuff/dotfiles/.dircolors 	$HOME/
