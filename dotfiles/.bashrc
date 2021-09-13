@@ -103,9 +103,11 @@ fi
 
 
 if [ $SSH_AGENT_PID ]; then
-    if [[ $(ssh-add -l) != *id_?sa* ]]; then
-        ssh-add
+    if [[ $(ssh-add -l) != *SHA256* ]]; then
+       	if [[ $(ssh-add -l) != *id_?sa* ]]; then
+            ssh-add
 		  #/opt/urserver/urserver-start
+        fi
     fi
 fi
 
