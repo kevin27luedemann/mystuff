@@ -138,6 +138,6 @@ export NVM_DIR="$HOME/.nvm"
 
 #Set the mouse speed for different computers
 if [ "$HOSTNAME" = "kevinserver" ]; then
-	exec xinput --set-prop 8 304 0, 1
-	exec xinput --set-prop 8 301 -0.4
+	xinput --set-prop 8 304 0, 1
+	#xinput --set-prop 8 301 -0.4
 fi
