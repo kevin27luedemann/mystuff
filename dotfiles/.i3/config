@@ -35,7 +35,7 @@ bindsym $sub+Shift+l exec i3lock -t -i /home/luedemann/Downloads/logo_design/wal
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec $HOME/.local/kitty.app/bin/kitty
 bindsym $mod+Shift+Return exec xterm -fa 'Monospace' -fs 11
 
 # kill focused window
@@ -123,10 +123,10 @@ bindsym $sub+r exec --no-startup-id spotifycli --prev
 bindsym $sub+n exec --no-startup-id spotifycli --next
 
 #monitor alignement
-bindsym $sub+Shift+w exec --no-startup-id /home/luedemann/.screenlayout/center.sh
-bindsym $sub+Shift+s exec --no-startup-id /home/luedemann/.screenlayout/full.sh
-bindsym $sub+Shift+a exec --no-startup-id /home/luedemann/.screenlayout/left.sh
-bindsym $sub+Shift+d exec --no-startup-id /home/luedemann/.screenlayout/right.sh
+bindsym $sub+Shift+w exec --no-startup-id $HOME/.screenlayout/center.sh
+bindsym $sub+Shift+s exec --no-startup-id $HOME/.screenlayout/full.sh
+bindsym $sub+Shift+a exec --no-startup-id $HOME/.screenlayout/left.sh
+bindsym $sub+Shift+d exec --no-startup-id $HOME/.screenlayout/right.sh
 
 bindcode 121 exec --no-startup-id ~/.i3/muting.sh
 bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-

@@ -1,4 +1,4 @@
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+#see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
 # If not running interactively, don't do anything
@@ -101,7 +101,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-
+setxkbmap de
 if [ $SSH_AGENT_PID ]; then
     if [[ $(ssh-add -l) != *SHA256* ]]; then
        	if [[ $(ssh-add -l) != *id_?sa* ]]; then
@@ -124,9 +124,15 @@ eval "$(dircolors ~/.dircolors)";
 export PYTHONPATH=${PYTHONPATH}:/home/luedemann/studium/6.Semester/parllelsolver/
 PATH=$PATH:/home/luedemann/bin/
 PATH=$PATH:/home/luedemann/.screenlayout/
+PATH=$PATH:$HOME/.local/kitty.app/bin/
+export PATH
 
 set -o vi
 if [ $TILIX_ID ] || [ $VTE_VERSION ] ; then source /etc/profile.d/vte.sh; fi # Ubuntu Budgie END
+
+export PYTHONPATH=${PYTHONPATH}:$HOME/Documents/parllelsolver/
+export PYTHONPATH=${PYTHONPATH}:$HOME/Documents/curb/
+export PYTHONPATH=${PYTHONPATH}:/home/upgp/Geophysik/Piv/pypiv/build/lib/
 
 #Cuda imports and libraries
 export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
@@ -143,3 +149,8 @@ if [ "$HOSTNAME" = "kevinserver" ]; then
 	xinput --set-prop 8 304 0, 1
 	#xinput --set-prop 8 301 -0.4
 fi
+
+set -o vi
+
+#bash completion
+[ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
