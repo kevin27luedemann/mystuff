@@ -31,7 +31,7 @@ font pango:monospace 13
 floating_modifier $mod
 
 #lockscreen
-bindsym $sub+Shift+l exec i3lock -t -i /home/luedemann/Downloads/logo_design/wallpaper_logo_1080.png
+bindsym $sub+Shift+l exec i3lock -t -i $HOME/Downloads/logo_design/wallpaper_logo_1080.png
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
@@ -236,7 +236,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # finds out, if available)
 bar {
         #status_command i3status
-        status_command /home/luedemann/.i3/statusbar.sh
+        status_command $HOME/.i3/statusbar.sh
         #status_command i3blocks -c $HOME/.config/i3blocks/config
 	colors{
 		background #d50000
@@ -247,5 +247,5 @@ bar {
 	tray_output primary
 }
 
-exec_always --no-startup-id feh --bg-max /home/luedemann/Documents/mystuff/dotfiles/wallpaper_logo.png
+exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/dotfiles/wallpaper_logo.png
 exec $HOME/.screenlayout/center.sh
