@@ -167,8 +167,8 @@ colorscheme zellner
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "youcompletme settings
-let g:ycm_clangd_binary_path = "/opt/clang/bin/clangd"
-
+"let g:ycm_clangd_binary_path = "/opt/clang/bin/clangd"
+"
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "some makros for doing executive stuff
 map <F12> :!make clean run <CR>
