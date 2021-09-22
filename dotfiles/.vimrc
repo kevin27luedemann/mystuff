@@ -107,6 +107,7 @@ if has("autocmd")
 		\ set expandtab |
 		\ set foldmethod=manual |
 	autocmd FileType cuda set ft=cuda.cpp
+	autocmd BufNewFile,BufRead *.cu set filetype=cpp
 	" Load folds automatically
 	"autocmd BufWinLeave *.* mkview
 	"autocmd BufWinEnter *.* silent loadview
