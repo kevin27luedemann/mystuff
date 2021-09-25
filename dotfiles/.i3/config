@@ -140,6 +140,9 @@ bindsym $sub+Shift+y exec --no-startup-id ~/.i3/muting.sh
 bindsym $sub+less exec --no-startup-id amixer -c 1 set Master 2%-
 bindsym $sub+Shift+less exec --no-startup-id amixer -c 1 set Master 2%+
 
+#Backlight brightness
+bindcode 232 exec --no-startup-id xbacklight -dec 5
+bindcode 233 exec --no-startup-id xbacklight -inc 5
 
 # focus the child container
 #bindsym $mod+d focus child
