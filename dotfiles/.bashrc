@@ -106,9 +106,11 @@ if [ $SSH_AGENT_PID ]; then
     if [[ $(ssh-add -l) != *SHA256* ]]; then
        	if [[ $(ssh-add -l) != *id_?sa* ]]; then
             ssh-add
-		  #/opt/urserver/urserver-start
         fi
     fi
+else
+	exec ssh-agent bash
+        ssh-add
 fi
 
 if [ -n "$DISPLAY" ]; then
@@ -144,11 +146,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-#Set the mouse speed for different computers
-if [ "$HOSTNAME" = "kevinserver" ]; then
-	#xinput --set-prop 8 304 0, 1
-	#xinput --set-prop 8 301 -0.4
-fi
 
 set -o vi
 
