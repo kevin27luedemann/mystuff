@@ -53,6 +53,7 @@ alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@ke
 alias sshwork='ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias vpnup='sudo nmcli connection up GWDG --ask'
 alias vpndown='sudo nmcli connection down GWDG'
+alias ssh='kitty +kitten ssh'
 
 #befgehl zum brennen per bootloader
 alias brenne="/home/luedemann/projekte/bootloader/lboot/bootloader -d /dev/ttyUSB0 -b 115200 -p"

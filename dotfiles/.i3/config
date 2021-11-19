@@ -133,8 +133,8 @@ bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-
 bindcode 123 exec --no-startup-id amixer -c 1 set Master 2%+
 
 bindsym $mod+numbersign exec --no-startup-id ~/.i3/muting.sh
-bindsym $mod+minus exec --no-startup-id amixer -c 1 set Master 2%-
-bindsym $mod+plus exec --no-startup-id amixer -c 1 set Master 2%+
+bindsym $mod+minus exec --no-startup-id amixer -c 0 set Master 2%-
+bindsym $mod+plus exec --no-startup-id amixer -c 0 set Master 2%+
 
 bindsym $sub+Shift+y exec --no-startup-id ~/.i3/muting.sh
 bindsym $sub+less exec --no-startup-id amixer -c 1 set Master 2%-
