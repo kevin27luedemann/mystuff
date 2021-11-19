@@ -252,3 +252,4 @@ bar {
 
 exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/dotfiles/wallpaper_logo.png
 exec $HOME/.screenlayout/start.sh
+exec --no-startup-id ssh-agent bash

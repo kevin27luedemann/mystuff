@@ -108,9 +108,9 @@ if [ $SSH_AGENT_PID ]; then
             ssh-add
         fi
     fi
-else
-	exec ssh-agent bash
-        ssh-add
+#else
+#	exec ssh-agent bash
+#        ssh-add
 fi
 
 if [ -n "$DISPLAY" ]; then
