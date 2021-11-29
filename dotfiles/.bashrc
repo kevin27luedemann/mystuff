@@ -108,9 +108,16 @@ if [ $SSH_AGENT_PID ]; then
             ssh-add
         fi
     fi
-#else
-#	exec ssh-agent bash
-#        ssh-add
+elif [ $SSH_AUTH_SOCK ]; then
+    if [[ $(ssh-add -l) != *SHA256* ]]; then
+       	if [[ $(ssh-add -l) != *id_?sa* ]]; then
+            ssh-add
+        fi
+    fi
+else
+    SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
+    export SSH_AUTH_SOCK
+    ssh-add
 fi
 
 if [ -n "$DISPLAY" ]; then
