@@ -103,14 +103,12 @@ fi
 
 setxkbmap de
 if [ $SSH_AGENT_PID ]; then
-    echo "PID found"
     if [[ $(ssh-add -l) != *SHA256* ]]; then
        	if [[ $(ssh-add -l) != *id_?sa* ]]; then
             ssh-add
         fi
     fi
 elif [ $SSH_AUTH_SOCK ]; then
-    echo "NO PID but socket"
     if [[ $(ssh-add -l) != *SHA256* ]]; then
        	if [[ $(ssh-add -l) != *id_?sa* ]]; then
             ssh-add
