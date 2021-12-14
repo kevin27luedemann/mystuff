@@ -148,9 +148,8 @@ export PYTHONPATH=${PYTHONPATH}:$HOME/Documents/curb/
 export PYTHONPATH=${PYTHONPATH}:/home/upgp/Geophysik/Piv/pypiv/build/lib/
 
 #Cuda imports and libraries
-export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 unset HISTFILE
 export NVM_DIR="$HOME/.nvm"
