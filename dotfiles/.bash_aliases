@@ -16,9 +16,6 @@ alias löa='~/.falsch.sh löa'
 alias lsb='xli `ls *.png`'
 alias cp='cp -n'
 
-#calender
-alias ncal='ncal -C'
-
 #sprung Befehle
 alias ..='cd ..'
 alias cd..='cd ..'
