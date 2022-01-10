@@ -83,9 +83,6 @@ alias syncdb='rsync -azv --update --progress $HOME/Documents/phd_results/databas
 
 alias soundwire='/home/luedemann/bin/SoundWireServer/SoundWireServer'
 
-alias plot='python3 /home/luedemann/Documents/compconv/plots/plot.py -f'
-alias anim='python3 /home/luedemann/Documents/compconv/plots/animate.py -f'
-
 #Befehle zum plotten speziel auf geosoft
 alias plot="python3 ~/Documents/compconv/plots/plot.py -f "
 alias plot2dvar="python3 ~/Documents/compconv/plots/plot_2Dvar.py -f "
@@ -113,7 +110,8 @@ alias r6="screen -rx running6"
 alias r7="screen -rx running7"
 alias r8="screen -rx running8"
 alias timeavg="python3 /home/upgp/kevin/Documents/phd_results/convergency/time_convergency.py -f"
-alias db="time python3 /home/upgp/kevin/Documents/phd_results/database/db.py"
+#alias db="time python3 /home/upgp/kevin/Documents/phd_results/database/db.py"
+alias db2="time python3 ~/Documents/phd_results/database2/db.py"
 alias converg="python3 /home/upgp/kevin/Documents/phd_results/convergency/time_convergency.py -f"
 alias all_nvsmi="python3 /home/upgp/kevin/bin/all_nvsmi.py"
 
