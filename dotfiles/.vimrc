@@ -20,10 +20,15 @@ Plugin 'scrooloose/nerdtree'
 " Git Plugin
 Plugin 'tpope/vim-fugitive'
 
+" Grammer Checker
+Plugin 'dpelle/vim-LanguageTool'
+
 call vundle#end()     " required
 filetype plugin on    " required
 
-"let g:ycm_server_python_interpreter = '/usr/bin/python'
+" For Grammer checker
+:let g:languagetool_jar='$HOME/LanguageTool-5.6/languagetool-commandline.jar'
+:let g:languagetool_lang='en-US'
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "remove bell and flashing
@@ -34,11 +39,9 @@ if has("autocmd")
 	autocmd GUIEnter * set visualbell t_vb=
 	" Some filetype specifics
 	autocmd FileType Latex 
-		\ set spelllang=de |
 		\ set spell |
 		\ set foldmethod=syntax |
 	autocmd BufNewFile,BufRead *.rst
-		\ set spelllang=en |
 		\ set spell |
 		\ set tabstop=3 |
 		\ set shiftwidth=3 |
@@ -46,7 +49,6 @@ if has("autocmd")
 		\ set expandtab |
 		\ set foldmethod=manual |
 	autocmd BufNewFile,BufRead *.py
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -55,7 +57,6 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=indent |
 	autocmd BufNewFile,BufRead *.jl
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -63,7 +64,6 @@ if has("autocmd")
 		\ set expandtab |
 		\ set foldmethod=manual |
 	autocmd BufNewFile,BufRead *.cpp
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -72,7 +72,6 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=syntax |
 	autocmd BufNewFile,BufRead *.c
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -81,7 +80,6 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=syntax |
 	autocmd BufNewFile,BufRead *.h
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -90,7 +88,6 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=syntax |
 	autocmd BufNewFile,BufRead *.cu
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -99,7 +96,6 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=syntax |
 	autocmd BufNewFile,BufRead *.json
-		\ set spelllang=en |
 		\ set nospell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -164,7 +160,7 @@ set number
 set ruler
 set showcmd
 "color settings (make sure these are very high contrast)
-colorscheme zellner
+"colorscheme zellner
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "youcompletme settings
