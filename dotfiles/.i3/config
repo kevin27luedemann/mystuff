@@ -99,6 +99,10 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+#make screenshot
+bindsym Print exec import -window root ~/`date +"%Y%m%d_%H%M%S.png"`
+bindsym Shift+Print --release exec --no-startup-id import ~/`date +"%Y%m%d_%H%M%S.png"`
+
 #use as screensaver
 bindsym $mod+Shift+s exec --no-startup-id feh -Y -x -q -D 10 -B black -F -Z -z -r /home/luedemann/Bilder/_besser/ /home/luedemann/Bilder/Hintergrundbilder/ /home/luedemann/usb/bilder/nice/
 
