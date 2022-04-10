@@ -60,7 +60,7 @@ alias vlc='vlc -q'
 alias urserver_start='/opt/urserver/urserver-start'
 alias urserver_stop='/opt/urserver/urserver-stop'
 
-alias playnext='python3 ~/_Puffer/pokemon/play_next'
+alias playnext='python3 ~/Videos/pokemon/play_next'
 function sshcuda { ssh -X cuda0"$1"; }
 alias c1='ssh -X -A cuda01'
 alias c2='ssh -X -A cuda02'
