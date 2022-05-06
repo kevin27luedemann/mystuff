@@ -158,7 +158,10 @@ alias nvvp='nvvp -vm /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java'
 export EDITOR=/usr/bin/vim
 
 #Nek5000
-export PATH=/home/luedemann/Nek5000/bin/:$PATH
+export PATH=$HOME/Nek5000/bin/:$PATH
+
+#Local bin
+export PATH=$HOME/.local/bin:$PATH
 
 #kitty
 alias icat="kitty +kitten icat"
