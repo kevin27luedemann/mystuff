@@ -163,6 +163,9 @@ export PATH=$HOME/Nek5000/bin/:$PATH
 #Local bin
 export PATH=$HOME/.local/bin:$PATH
 
+#set umask to respect group
+umask 0002
+
 #kitty
 alias icat="kitty +kitten icat"
 alias kssh="kitty +kitten ssh"
