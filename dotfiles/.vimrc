@@ -159,6 +159,7 @@ set sidescroll=10
 set number 
 set ruler
 set showcmd
+set cursorline
 "color settings (make sure these are very high contrast)
 "colorscheme zellner
 

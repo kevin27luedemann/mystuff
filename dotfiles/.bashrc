@@ -135,6 +135,7 @@ eval "$(dircolors ~/.dircolors)";
 #cd ~
 
 export PYTHONPATH=${PYTHONPATH}:/home/luedemann/studium/6.Semester/parllelsolver/
+PATH=$PATH:/usr/bin/
 PATH=$PATH:/home/luedemann/bin/
 PATH=$PATH:/home/luedemann/.screenlayout/
 PATH=$PATH:$HOME/.local/kitty.app/bin/
