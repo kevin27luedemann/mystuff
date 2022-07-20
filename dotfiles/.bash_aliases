@@ -50,7 +50,6 @@ alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@ke
 alias sshwork='ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias vpnup='sudo nmcli connection up GWDG --ask'
 alias vpndown='sudo nmcli connection down GWDG'
-alias ssh='kitty +kitten ssh'
 
 #befgehl zum brennen per bootloader
 alias brenne="/home/luedemann/projekte/bootloader/lboot/bootloader -d /dev/ttyUSB0 -b 115200 -p"
@@ -167,13 +166,20 @@ export PATH=$HOME/.local/bin:$PATH
 umask 0002
 
 #kitty
-alias icat="kitty +kitten icat"
+#kitten ssh
 alias kssh="kitty +kitten ssh"
 alias ksshcip='kitty +kitten ssh kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshcipx='kitty +kitten ssh -X kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshhpcvpn='kitty +kitten ssh -X -C kluedem@gwdu102.gwdg.de'
 alias ksshhpc='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
+
+#kitten icat
+alias icat="kitty +kitten icat"
+
+#kitten transfer
+alias transfer="kitty +kitten transfer"
+
 
 
 #Openfoam
