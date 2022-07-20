@@ -168,11 +168,14 @@ umask 0002
 #kitty
 #kitten ssh
 alias kssh="kitty +kitten ssh"
+
 alias ksshcip='kitty +kitten ssh kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshcipx='kitty +kitten ssh -X kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshhpcvpn='kitty +kitten ssh -X -C kluedem@gwdu102.gwdg.de'
 alias ksshhpc='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
+alias ksshhome='kitty +kitten ssh -X -A -C luedemann@kevin-home-physik.de'
+alias ksshhometunnel='kitty +kitten ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@kevin-home-physik.de'
 
 #kitten icat
 alias icat="kitty +kitten icat"
@@ -182,7 +185,6 @@ alias transfer="kitty +kitten transfer"
 
 #Get kitty update
 alias get_Kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
-
 
 #Openfoam
 FILE=/opt/openfoam-dev/etc/bashrc
