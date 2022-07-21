@@ -190,5 +190,5 @@ alias get_Kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/
 FILE=/opt/openfoam-dev/etc/bashrc
 if test -f "$FILE"; then
 	. /opt/openfoam-dev/etc/bashrc
-	. /opt/openfoam8/etc/bashrc
+	. /opt/openfoam9/etc/bashrc
 fi
