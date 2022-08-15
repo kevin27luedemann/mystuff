@@ -33,20 +33,20 @@ alias weg='gnome-session-quit'
 
 alias pushmpdtoserver='rsync -azv --progress /home/luedemann/.mpd/state luedemann@kevin-home-physik.de:/home/luedemann/.mpd/state'
 alias pullmpdfromserver='rsync -azv --progress luedemann@kevin-home-physik.de:/home/luedemann/.mpd/state /home/luedemann/.mpd/state'
-alias pushmpdtoserverlocal='rsync -azv --progress /home/luedemann/.mpd/state luedemann@192.168.2.119:/home/luedemann/.mpd/state'
-alias pullmpdfromserverlocal='rsync -azv --progress luedemann@192.168.2.119:/home/luedemann/.mpd/state /home/luedemann/.mpd/state'
+alias pushmpdtoserverlocal='rsync -azv --progress /home/luedemann/.mpd/state luedemann@192.168.2.180:/home/luedemann/.mpd/state'
+alias pullmpdfromserverlocal='rsync -azv --progress luedemann@192.168.2.180:/home/luedemann/.mpd/state /home/luedemann/.mpd/state'
 
 alias pushpokemontoserver='rsync -azv --update --progress /home/luedemann/Videos/pokemon/*.txt luedemann@kevin-home-physik.de:/home/luedemann/Videos/pokemon/'
 alias pullpokemonfromserver='rsync -azv --update --progress luedemann@kevin-home-physik.de:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
-alias pushpokemontoserverlocal='rsync -azv --update --progress /home/luedemann/Videos/pokemon/*.txt 192.168.2.119:/home/luedemann/Videos/pokemon/'
-alias pullpokemonfromserverlocal='rsync -azv --update --progress 192.168.2.119:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
+alias pushpokemontoserverlocal='rsync -azv --update --progress /home/luedemann/Videos/pokemon/*.txt 192.168.2.180:/home/luedemann/Videos/pokemon/'
+alias pullpokemonfromserverlocal='rsync -azv --update --progress 192.168.2.180:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
 
 #ssh Befehle
 alias sshcip='ssh -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias sshcipx='ssh -X -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias sshhpc='ssh -X -A kluedem@gwdu102.gwdg.de'
 alias sshhome='ssh -X -A -C luedemann@kevin-home-physik.de'
-alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@kevin-home-physik.de'
+alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
 alias sshwork='ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias vpnup='sudo nmcli connection up GWDG --ask'
 alias vpndown='sudo nmcli connection down GWDG'
@@ -175,7 +175,7 @@ alias ksshhpcvpn='kitty +kitten ssh -X -C kluedem@gwdu102.gwdg.de'
 alias ksshhpc='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias ksshhome='kitty +kitten ssh -X -A -C luedemann@kevin-home-physik.de'
-alias ksshhometunnel='kitty +kitten ssh -X -A -L 127.0.0.1:2727:192.168.2.119:8888 luedemann@kevin-home-physik.de'
+alias ksshhometunnel='kitty +kitten ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
 
 #kitten icat
 alias icat="kitty +kitten icat"
