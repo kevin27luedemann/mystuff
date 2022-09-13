@@ -56,6 +56,9 @@ if has("autocmd")
 		\ set expandtab |
 		\ set cc=80 |
 		\ set foldmethod=indent |
+	augroup filetypedetect
+  		au! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
+	augroup END
 	autocmd BufNewFile,BufRead *.jl
 		\ set nospell |
 		\ set tabstop=4 |
