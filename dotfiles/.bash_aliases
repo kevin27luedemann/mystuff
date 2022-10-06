@@ -183,6 +183,9 @@ alias icat="kitty +kitten icat"
 #kitten transfer
 alias transfer="kitty +kitten transfer"
 
+#kitty matplotlib variable
+export MPLBACKEND_KITTY_SIZING="manual"
+
 #Get kitty update
 alias get_Kitty="curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin"
 
