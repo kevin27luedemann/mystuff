@@ -233,7 +233,7 @@ bindsym $mod+r mode "resize"
 hide_edge_borders both
 
 #Disable title
-for_window [class="^.*"] border pixel 1
+default_border pixel 0
 
 #color settings
 # class                 border  backgr. text    indicator child_border
