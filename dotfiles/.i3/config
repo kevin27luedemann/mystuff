@@ -232,6 +232,9 @@ bindsym $mod+r mode "resize"
 #Remove boarders
 hide_edge_borders both
 
+#Disable title
+default_border pixel 0
+
 #color settings
 # class                 border  backgr. text    indicator child_border
 client.focused          #2f343a #900000 #ffffff #900000   #900000
