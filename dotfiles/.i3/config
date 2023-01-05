@@ -31,8 +31,9 @@ font pango:monospace 13
 floating_modifier $mod
 
 #lockscreen
-bindsym $sub+Shift+l exec i3lock -t -i $HOME/.wallpaper_logo_saver.png
-bindsym $sub+Shift+b exec $HOME/.i3/lock.sh
+bindsym $sub+Shift+l exec $HOME/.i3/lock.sh
+bindsym $sub+Shift+b exec $HOME/.i3/lock.sh b
+bindsym $sub+Shift+h exec $HOME/.i3/lock.sh h
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
