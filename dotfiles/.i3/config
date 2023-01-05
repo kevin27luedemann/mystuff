@@ -32,6 +32,7 @@ floating_modifier $mod
 
 #lockscreen
 bindsym $sub+Shift+l exec i3lock -t -i $HOME/.wallpaper_logo_saver.png
+bindsym $sub+Shift+b exec $HOME/.i3/lock.sh
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
