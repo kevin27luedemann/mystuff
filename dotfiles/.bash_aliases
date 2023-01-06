@@ -42,9 +42,9 @@ alias pushpokemontoserverlocal='rsync -azv --update --progress /home/luedemann/V
 alias pullpokemonfromserverlocal='rsync -azv --update --progress 192.168.2.180:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
 
 #ssh Befehle
-alias sshcip='ssh -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
-alias sshcipx='ssh -X -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
+alias sshcip='ssh -X -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias sshhpc='ssh -X -A kluedem@gwdu102.gwdg.de'
+alias sshhpcj='ssh -X -A -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias sshhome='ssh -X -A -C luedemann@kevin-home-physik.de'
 alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
 alias sshwork='ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
@@ -169,10 +169,8 @@ umask 0002
 #kitten ssh
 alias kssh="kitty +kitten ssh"
 
-alias ksshcip='kitty +kitten ssh kevin.luedemann@login.cip.physik.uni-goettingen.de'
-alias ksshcipx='kitty +kitten ssh -X kevin.luedemann@login.cip.physik.uni-goettingen.de'
+alias ksshcip='kitty +kitten ssh -X kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshhpcvpn='kitty +kitten ssh -X -C kluedem@gwdu102.gwdg.de'
-alias ksshhpc='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
 alias ksshhome='kitty +kitten ssh -X -A -C luedemann@kevin-home-physik.de'
 alias ksshhometunnel='kitty +kitten ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
