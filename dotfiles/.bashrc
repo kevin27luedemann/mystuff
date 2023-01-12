@@ -138,7 +138,6 @@ export PYTHONPATH=${PYTHONPATH}:/home/luedemann/studium/6.Semester/parllelsolver
 PATH=$HOME/bin/:$PATH
 PATH=$HOME/.screenlayout/:$PATH
 PATH=$HOME/.local/kitty.app/bin/:$PATH
-PATH=$HOME/miniconda3/bin/:$PATH
 export PATH
 
 set -o vi
@@ -163,9 +162,6 @@ set -o vi
 #bash completion
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
-
-
-
 #To end GTK warning for accessebility bus or something
 export NO_AT_BRIDGE=1
 
@@ -176,14 +172,14 @@ if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integr
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/luedemann/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/upgp/kevin/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/luedemann/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/luedemann/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/upgp/kevin/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/upgp/kevin/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/luedemann/miniconda3/bin:$PATH"
+        export PATH="/home/upgp/kevin/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
