@@ -75,6 +75,15 @@ alias t2='ssh -X -A titan2'
 alias kevin='ssh -X -A kevin@kevin'
 alias vogel='ssh -X -A kevin@vogel'
 
+function r {
+if ! screen -list | grep -q "running$1"
+then
+	screen -S running$1
+else
+	screen -rx running$1
+fi
+
+}
 
 #ssh copy
 alias syncdb='rsync -azv --update --progress $HOME/Documents/phd_results/database/ luedemann@kevin-home-physik.de:/home/luedemann/Documents/phd_results/database/'
@@ -83,6 +92,7 @@ alias syncdb='rsync -azv --update --progress $HOME/Documents/phd_results/databas
 alias soundwire='/home/luedemann/bin/SoundWireServer/SoundWireServer'
 
 #Befehle zum plotten speziel auf geosoft
+
 alias plot="python3 ~/Documents/compconv/plots/plot.py -f "
 alias plot2dvar="python3 ~/Documents/compconv/plots/plot_2Dvar.py -f "
 alias cmplot="python3 ~/Documents/compconv/plots/cmplot.py -f "
@@ -92,22 +102,22 @@ alias terms="python3 ~/Documents/compconv/plots/terms.py -f "
 alias slize="python3 ~/Documents/compconv/plots/slizes.py -f "
 alias corre="python3 ~/Documents/compconv/plots/correl.py -f "
 alias momentum="python3 ~/Documents/compconv/plots/momentum.py -f "
-alias running="screen -rx running1"
-alias running2="screen -rx running2"
-alias running3="screen -rx running3"
-alias running4="screen -rx running4"
-alias running5="screen -rx running5"
-alias running6="screen -rx running6"
-alias running7="screen -rx running7"
-alias running8="screen -rx running8"
-alias r1="screen -rx running1"
-alias r2="screen -rx running2"
-alias r3="screen -rx running3"
-alias r4="screen -rx running4"
-alias r5="screen -rx running5"
-alias r6="screen -rx running6"
-alias r7="screen -rx running7"
-alias r8="screen -rx running8"
+#alias running="screen -rx running1"
+#alias running2="screen -rx running2"
+#alias running3="screen -rx running3"
+#alias running4="screen -rx running4"
+#alias running5="screen -rx running5"
+#alias running6="screen -rx running6"
+#alias running7="screen -rx running7"
+#alias running8="screen -rx running8"
+#alias r1="screen -rx running1"
+#alias r2="screen -rx running2"
+#alias r3="screen -rx running3"
+#alias r4="screen -rx running4"
+#alias r5="screen -rx running5"
+#alias r6="screen -rx running6"
+#alias r7="screen -rx running7"
+#alias r8="screen -rx running8"
 alias timeavg="python3 /home/upgp/kevin/Documents/phd_results/convergency/time_convergency.py -f"
 alias db="time python3 /home/upgp/kevin/Documents/phd_results/database2/db.py"
 alias dbmerge="time python3 /home/upgp/kevin/Documents/phd_results/database2/dbmerge.py"
