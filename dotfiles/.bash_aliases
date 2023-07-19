@@ -47,7 +47,7 @@ alias sshhpc='ssh -X -A kluedem@gwdu102.gwdg.de'
 alias sshhpcj='ssh -X -A -J kluedem@login.gwdg.de kluedem@gwdu102.gwdg.de'
 alias sshhome='ssh -X -A -C luedemann@kevin-home-physik.de'
 alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
-alias sshwork='ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
+alias sshwork='ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de kevin@maurice.geo.physik.uni-goettingen.de'
 alias vpnup='sudo nmcli connection up GWDG --ask'
 alias vpndown='sudo nmcli connection down GWDG'
 
@@ -181,7 +181,7 @@ alias kssh="kitty +kitten ssh"
 
 alias ksshcip='kitty +kitten ssh -X kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias ksshhpcvpn='kitty +kitten ssh -X -C kluedem@gwdu102.gwdg.de'
-alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de,kevin@maurice.geo.physik.uni-goettingen.de kevin@geosoft'
+alias ksshwork='kitty +kitten ssh -X -A -C -J kluedem@login.gwdg.de,kluedem@gwdu60.gwdg.de kevin@maurice.geo.physik.uni-goettingen.de'
 alias ksshhome='kitty +kitten ssh -X -A -C luedemann@kevin-home-physik.de'
 alias ksshhometunnel='kitty +kitten ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@kevin-home-physik.de'
 
