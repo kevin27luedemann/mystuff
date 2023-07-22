@@ -10,7 +10,7 @@ do
 		volume=${volume%]*}
 		volume=${volume%]*}
 		volume=${volume%]*}
-	elif [ "$HOSTNAME" == "airbrain" ]; then
+	elif [ "$HOSTNAME" == "airbrain" ] || [ "$HOSTNAME" == "schlepptron" ]; then
 		volume=`amixer -M -c 0 get Master | grep "Mono: Playback"`
 		volume=${volume#*[}
 		volume=${volume%]*}
