@@ -149,8 +149,8 @@ bindsym $sub+Shift+less exec --no-startup-id amixer -c 1 set Master 2%+
 #Backlight brightness
 bindcode 232 exec --no-startup-id $HOME/.i3/backlight.sh dec 5
 bindcode 233 exec --no-startup-id $HOME/.i3/backlight.sh inc 5
-bindsym $mod+Shift+n exec --no-startup-id $HOME/.i3/backlight.sh dec 5
-bindsym $mod+Shift+m exec --no-startup-id $HOME/.i3/backlight.sh inc 5
+bindsym $sub+Shift+n exec --no-startup-id $HOME/.i3/backlight.sh dec 5
+bindsym $sub+Shift+m exec --no-startup-id $HOME/.i3/backlight.sh inc 5
 #bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.i3/backlight.sh dec 5
 #bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.i3/backlight.sh inc 5
 
