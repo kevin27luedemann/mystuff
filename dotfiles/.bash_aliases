@@ -41,6 +41,8 @@ alias pullpokemonfromserver='rsync -azv --update --progress luedemann@kevin-home
 alias pushpokemontoserverlocal='rsync -azv --update --progress /home/luedemann/Videos/pokemon/*.txt 192.168.2.180:/home/luedemann/Videos/pokemon/'
 alias pullpokemonfromserverlocal='rsync -azv --update --progress 192.168.2.180:/home/luedemann/Videos/pokemon/*.txt /home/luedemann/Videos/pokemon/'
 
+alias rsync1m='rsync --bwlimit=1M --progress'
+
 #ssh Befehle
 alias sshcip='ssh -X -A kevin.luedemann@login.cip.physik.uni-goettingen.de'
 alias sshhpc='ssh -X -A kluedem@gwdu102.gwdg.de'
