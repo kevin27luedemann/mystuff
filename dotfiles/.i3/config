@@ -266,4 +266,5 @@ bar {
 }
 
 exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/dotfiles/wallpaper_logo.png
+exec --no-startup-id nextcloud
 exec $HOME/.screenlayout/start.sh
