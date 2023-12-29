@@ -265,6 +265,6 @@ bar {
 	tray_output primary
 }
 
-exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/dotfiles/wallpaper_logo.png
+exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/logo_design/Logo_design.png
 exec --no-startup-id nextcloud
 exec $HOME/.screenlayout/start.sh
