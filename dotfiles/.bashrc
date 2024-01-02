@@ -132,20 +132,9 @@ fi
 
 xrdb ~/.Xresources
 eval "$(dircolors ~/.dircolors)";
-#cd ~
-
-export PYTHONPATH=${PYTHONPATH}:/home/luedemann/studium/6.Semester/parllelsolver/
-PATH=$HOME/bin/:$PATH
-PATH=$HOME/.screenlayout/:$PATH
-PATH=$HOME/.local/kitty.app/bin/:$PATH
-export PATH
 
 set -o vi
 if [ $TILIX_ID ] || [ $VTE_VERSION ] ; then source /etc/profile.d/vte.sh; fi # Ubuntu Budgie END
-
-export PYTHONPATH=${PYTHONPATH}:$HOME/Documents/parllelsolver/
-export PYTHONPATH=${PYTHONPATH}:$HOME/Documents/curb/
-export PYTHONPATH=${PYTHONPATH}:/home/upgp/Geophysik/Piv/pypiv/build/lib/
 
 #Cuda imports and libraries
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
@@ -156,7 +145,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 set -o vi
 
 #bash completion
@@ -165,21 +153,20 @@ set -o vi
 #To end GTK warning for accessebility bus or something
 export NO_AT_BRIDGE=1
 
-
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
 # END_KITTY_SHELL_INTEGRATION
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/luedemann/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$($HOME'/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/luedemann/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/luedemann/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/luedemann/miniconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
