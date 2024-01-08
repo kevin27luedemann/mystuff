@@ -5,6 +5,9 @@ rm -f $HOME/.i3status.conf
 ln -s $HOME/Documents/mystuff/dotfiles/.i3/ 		$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.i3status.conf 	$HOME/
 
+#Qtile xsession file
+sudo cp ./qtile.desktop /usr/share/xsessions/
+
 #bash config files
 rm -f $HOME/.bashrc
 rm -f $HOME/.bash_aliases
