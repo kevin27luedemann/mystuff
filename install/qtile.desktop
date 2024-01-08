@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Qtile
 Comment=Qtile Session
-Exec=qtile start -c /home/luedemann/Documents/mystuff/dotfiles/qtile/config.py
+Exec=/home/luedemann/miniconda3/bin/qtile start -c /home/luedemann/Documents/mystuff/dotfiles/qtile/config.py
 Type=Application
 Keywords=wm;tiling
