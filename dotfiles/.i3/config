@@ -50,6 +50,9 @@ bindsym $mod+d exec dmenu_run
 # installed.
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
+# Launch the browser app
+bindsym $mod+b exec brave-browser
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down

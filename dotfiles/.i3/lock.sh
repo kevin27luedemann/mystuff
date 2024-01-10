@@ -15,5 +15,6 @@ then
     systemctl suspend
 fi
 #i3lock -n -t -i $HOME/.wallpaper_logo_saver.png -k --timecolor=D50000 --datecolor=000080 --timepos="100:50" --datestr="%A %d.%m.%Y"
-i3lock -n -t -i $HOME/.wallpaper_logo_saver.png # -k --timecolor=D50000 --datecolor=000080 --timepos="100:50" --datestr="%A %d.%m.%Y"
+#i3lock -n -t -i $HOME/.wallpaper_logo_saver.png # -k --timecolor=D50000 --datecolor=000080 --timepos="100:50" --datestr="%A %d.%m.%Y"
+i3lock -n -c D50000
 revert
