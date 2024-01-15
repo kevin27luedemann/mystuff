@@ -19,6 +19,7 @@ ln -s $HOME/Documents/mystuff/dotfiles/.bash_profile 	$HOME/
 #Vim
 rm -f $HOME/.vimrc
 ln -s $HOME/Documents/mystuff/dotfiles/.vimrc 		$HOME/
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 #Inputrc and X
 rm -f $HOME/.inputrc
