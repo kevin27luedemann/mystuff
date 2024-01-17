@@ -23,12 +23,20 @@ Plugin 'tpope/vim-fugitive'
 " Grammer Checker
 Plugin 'dpelle/vim-LanguageTool'
 
+" VimWiki
+Plugin 'vimwiki/vimwiki'
+
 call vundle#end()     " required
 filetype plugin on    " required
 
 " For Grammer checker
 :let g:languagetool_jar='$HOME/LanguageTool-5.6/languagetool-commandline.jar'
 :let g:languagetool_lang='en-US'
+
+" For VimWiki to work with markdown and only interpret the wiki
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': 'md'}]
+let g:vimwiki_global_ext = 0
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "remove bell and flashing
