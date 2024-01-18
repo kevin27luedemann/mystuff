@@ -30,7 +30,8 @@ call vundle#end()     " required
 filetype plugin on    " required
 
 " For Grammer checker
-:let g:languagetool_jar='$HOME/LanguageTool-5.6/languagetool-commandline.jar'
+" Command to get LanguageTool: wget https://languagetool.org/download/LanguageTool-5.9.zip
+:let g:languagetool_jar='$HOME/LanguageTool-5.9/languagetool-commandline.jar'
 :let g:languagetool_lang='en-US'
 
 " For VimWiki to work with markdown and only interpret the wiki
