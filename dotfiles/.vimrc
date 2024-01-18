@@ -65,6 +65,13 @@ if has("autocmd")
 		\ set expandtab |
 		\ set cc=80 |
 		\ set foldmethod=indent |
+	autocmd BufNewFile,BufRead *.md
+		\ set spell |
+		\ set tabstop=4 |
+		\ set shiftwidth=4 |
+		\ set autoindent |
+		\ set expandtab |
+		\ set foldmethod=manual |
 	augroup filetypedetect
   		au! BufRead,BufNewFile *.sage,*.spyx,*.pyx setfiletype python
 	augroup END
