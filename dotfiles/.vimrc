@@ -31,13 +31,16 @@ filetype plugin on    " required
 
 " For Grammer checker
 " Command to get LanguageTool: wget https://languagetool.org/download/LanguageTool-5.9.zip
-:let g:languagetool_jar='$HOME/LanguageTool-5.9/languagetool-commandline.jar'
-:let g:languagetool_lang='en-US'
+let g:languagetool_jar='$HOME/LanguageTool-5.9/languagetool-commandline.jar'
+let g:languagetool_lang='en-US'
 
 " For VimWiki to work with markdown and only interpret the wiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': 'md'}]
 let g:vimwiki_global_ext = 0
+
+" For youcompleteme
+let g:ycm_filetype_blacklist={'notes': 1, 'unite': 1, 'tagbar': 1, 'pandoc': 1, 'qf': 1, 'infolog': 1, 'mail': 1}
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "remove bell and flashing
@@ -66,6 +69,13 @@ if has("autocmd")
 		\ set cc=80 |
 		\ set foldmethod=indent |
 	autocmd BufNewFile,BufRead *.md
+		\ set spell |
+		\ set tabstop=4 |
+		\ set shiftwidth=4 |
+		\ set autoindent |
+		\ set expandtab |
+		\ set foldmethod=manual |
+	autocmd BufNewFile,BufRead COMMIT_EDITMSG
 		\ set spell |
 		\ set tabstop=4 |
 		\ set shiftwidth=4 |
@@ -182,10 +192,6 @@ set cursorline
 "color settings (make sure these are very high contrast)
 "colorscheme zellner
 
-"++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-"youcompletme settings
-"let g:ycm_clangd_binary_path = "/opt/clang/bin/clangd"
-"
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "some makros for doing executive stuff
 map <F12> :!make clean run <CR>
