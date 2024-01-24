@@ -26,6 +26,9 @@ Plugin 'dpelle/vim-LanguageTool'
 " VimWiki
 Plugin 'vimwiki/vimwiki'
 
+" Calender plugin
+Plugin 'mattn/calendar-vim'
+
 call vundle#end()     " required
 filetype plugin on    " required
 
@@ -37,10 +40,15 @@ let g:languagetool_lang='en-US'
 " For VimWiki to work with markdown and only interpret the wiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': 'md'}]
-let g:vimwiki_global_ext = 0
+" let g:vimwiki_global_ext = 0
 
 " For youcompleteme
 let g:ycm_filetype_blacklist={'notes': 1, 'unite': 1, 'tagbar': 1, 'pandoc': 1, 'qf': 1, 'infolog': 1, 'mail': 1}
+
+" For vim-fugitive
+map <leader>ga :Git add % <CR>
+map <leader>gc :Git commit <CR>
+map <leader>gs :Git status <CR>
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "remove bell and flashing
