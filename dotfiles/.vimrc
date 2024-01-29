@@ -50,6 +50,11 @@ map <leader>ga :Git add % <CR>
 map <leader>gc :Git commit <CR>
 map <leader>gs :Git status <CR>
 
+" For calendar
+let g:calendar_monday = 1
+let g:calendar_weeknm = 3
+let g:calendar_number_of_months = 5
+
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "remove bell and flashing
 set noerrorbells visualbell t_vb=
