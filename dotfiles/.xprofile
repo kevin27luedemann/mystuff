@@ -1,2 +1,3 @@
 xset -b
 xset s off
+xset r rate 100 75
