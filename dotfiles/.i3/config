@@ -238,8 +238,11 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Hide borders
+hide_edge_borders smart
+
 # Disable title
-default_border pixel 1
+default_border pixel 2
 
 #color settings
 # class                 border  backgr. text    indicator child_border
