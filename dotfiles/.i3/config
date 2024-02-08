@@ -40,6 +40,9 @@ bindsym $sub+Shift+h exec $HOME/.i3/lock.sh h
 bindsym $mod+Return exec $HOME/.local/kitty.app/bin/kitty
 bindsym $mod+Shift+Return exec xterm -fa 'Monospace' -fs 11
 
+#Print date and time into cursor
+#bindsym $sub+Shift+P exec date +"%Y%m%d_%H%M%S"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -108,28 +111,8 @@ bindsym $mod+a focus parent
 bindsym Print exec import -window root ~/`date +"%Y%m%d_%H%M%S.png"`
 bindsym Shift+Print --release exec --no-startup-id import ~/`date +"%Y%m%d_%H%M%S.png"`
 
-#use as screensaver
-bindsym $mod+Shift+s exec --no-startup-id feh -Y -x -q -D 10 -B black -F -Z -z -r /home/luedemann/Bilder/_besser/ /home/luedemann/Bilder/Hintergrundbilder/ /home/luedemann/usb/bilder/nice/
-
 #changes wallpaper
 bindsym $mod+Shift+b exec --no-startup-id nitrogen --restore
-
-#use media keys
-#bindcode 172 exec --no-startup-id mpc toggle
-#bindcode 174 exec --no-startup-id mpc stop
-#bindcode 173 exec --no-startup-id mpc prev
-#bindcode 171 exec --no-startup-id mpc next
-
-#bindsym $sub+p exec --no-startup-id mpc toggle
-#bindsym $sub+s exec --no-startup-id mpc stop
-#bindsym $sub+r exec --no-startup-id mpc prev
-#bindsym $sub+n exec --no-startup-id mpc next
-
-#used for spotify client
-bindsym $sub+p exec --no-startup-id spotifycli --playpause
-bindsym $sub+s exec --no-startup-id spotifycli --pause
-bindsym $sub+r exec --no-startup-id spotifycli --prev
-bindsym $sub+n exec --no-startup-id spotifycli --next
 
 #monitor alignement
 bindsym $sub+Shift+w exec --no-startup-id $HOME/.screenlayout/center.sh
@@ -137,6 +120,7 @@ bindsym $sub+Shift+s exec --no-startup-id $HOME/.screenlayout/full.sh
 bindsym $sub+Shift+a exec --no-startup-id $HOME/.screenlayout/left.sh
 bindsym $sub+Shift+d exec --no-startup-id $HOME/.screenlayout/right.sh
 
+#Volume controll
 bindcode 121 exec --no-startup-id ~/.i3/muting.sh
 bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-
 bindcode 123 exec --no-startup-id amixer -c 1 set Master 2%+
@@ -154,8 +138,6 @@ bindcode 232 exec --no-startup-id $HOME/.i3/backlight.sh dec 5
 bindcode 233 exec --no-startup-id $HOME/.i3/backlight.sh inc 5
 bindsym $sub+Shift+n exec --no-startup-id $HOME/.i3/backlight.sh dec 5
 bindsym $sub+Shift+m exec --no-startup-id $HOME/.i3/backlight.sh inc 5
-#bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.i3/backlight.sh dec 5
-#bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.i3/backlight.sh inc 5
 
 # focus the child container
 #bindsym $mod+d focus child
