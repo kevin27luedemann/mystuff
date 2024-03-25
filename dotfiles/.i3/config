@@ -36,7 +36,7 @@ bindsym $sub+Shift+b exec $HOME/.i3/lock.sh b
 bindsym $sub+Shift+h exec $HOME/.i3/lock.sh h
 
 #slide show
-bindsym $mod+Shift+s exec feh -Y -x -q -D 10 -B black -F -Z -z -r ~/Nextcloud/pictures/
+bindsym $mod+Shift+s exec $HOME/.i3/slideshow.sh
 
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
