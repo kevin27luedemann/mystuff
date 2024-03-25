@@ -1,6 +1,6 @@
 #!/bin/bash
 
-FOLDERS=`ls $HOME/Nextcloud/pictures/ | grep -v -E "(20230707|20230720)"`
+FOLDERS=`ls $HOME/Nextcloud/pictures/ | grep -E -v "(20230707|20230720)"`
 echo $FOLDERS
 
 FOLD=
