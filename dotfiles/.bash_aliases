@@ -60,6 +60,9 @@ export PATH=$HOME/Nek5000/bin/:$PATH
 #Local bin
 export PATH=$HOME/.local/bin:$PATH
 
+#Screen layout files
+export PATH=$HOME/.screenlayout:$PATH
+
 #go installation
 export PATH=$PATH:/home/kevin/software/go/bin
 

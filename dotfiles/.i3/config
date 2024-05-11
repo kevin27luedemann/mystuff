@@ -35,6 +35,9 @@ bindsym $sub+Shift+l exec $HOME/.i3/lock.sh
 bindsym $sub+Shift+b exec $HOME/.i3/lock.sh b
 bindsym $sub+Shift+h exec $HOME/.i3/lock.sh h
 
+#slide show
+bindsym $mod+Shift+s exec $HOME/.i3/slideshow.sh
+
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec $HOME/.local/kitty.app/bin/kitty
