@@ -33,6 +33,10 @@ ln -s $HOME/Documents/mystuff/dotfiles/.xprofile 	$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.Xdefaults 	$HOME/
 ln -s $HOME/Documents/mystuff/dotfiles/.dircolors 	$HOME/
 
+#Picom confi
+rm -f $HOME/.config/picom.conf
+ln -s $HOME/Documents/mystuff/dotfiles/picom.conf $HOME/.config/
+
 #MPD config
 rm -f $HOME/.mpdconf
 ln -s $HOME/Documents/mystuff/dotfiles/.mpdconf 	$HOME/
