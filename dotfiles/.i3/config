@@ -58,6 +58,7 @@ bindsym $mod+d exec dmenu_run
 
 # Launch the browser app
 bindsym $mod+b exec brave-browser
+bindsym $mod+$sub+b exec brave-browser --incognito
 
 # change focus
 bindsym $mod+h focus left
