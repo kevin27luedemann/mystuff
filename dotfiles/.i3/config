@@ -50,11 +50,10 @@ bindsym $mod+Shift+Return exec xterm -fa 'Monospace' -fs 11
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec dmenu_run
+
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
+		-config ~/.config/rofi/rofidmenu.rasi
 
 # Launch the browser app
 bindsym $mod+b exec brave-browser
@@ -184,12 +183,9 @@ bindsym $mod+Shift+9 move container to workspace $WORK9
 bindsym $mod+Shift+0 move container to workspace $WORK10
 bindsym $mod+Shift+ssharp move container to workspace $WORK11
 
-#start work10 on secondary screen
-#workspace $WORK10 output DVI-I-1
-#workspace $WORK10 output DP-1
-#workspace $WORK1  output HDMI-1
-#workspace $WORK1  output DP-2
-#workspace $WORK9  output DVI-D-0
+# switch/iterate between workspaces
+bindsym $mod+Tab workspace next
+bindsym $mod+Shift+Tab workspace prev
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -257,6 +253,13 @@ bar {
 # Config for specific windows
 for_window [class="Gtick"] border normal 3
 for_window [class="Gtick"] floating enable
+
+#border indicator on windows:
+new_window pixel 1
+
+# Set inner/outer gaps
+gaps inner 6
+gaps outer 3
 
 # Start up and restart behaviour
 exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/logo_design/Logo_design.png
