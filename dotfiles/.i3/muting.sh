@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$HOSTNAME" = "airbrain" ]; then
+if [ "$HOSTNAME" = "framework" ]; then
 	amixer -M -c 0 set Speaker 100% unmute
 	amixer -M -c 0 set PCM 100% unmute
 	amixer -M -c 0 set Master playback toggle
