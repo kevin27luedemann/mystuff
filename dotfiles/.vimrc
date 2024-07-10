@@ -29,8 +29,15 @@ Plugin 'vimwiki/vimwiki'
 " Calender plugin
 Plugin 'mattn/calendar-vim'
 
+" Table math options
+Plugin 'dhruvasagar/vim-table-mode'
+
 call vundle#end()     " required
 filetype plugin on    " required
+
+" For Spreadsheet plugin
+" let g:vimwiki_table_mappings=0
+" let g:vimwiki_table_auto_fmt=0
 
 " For Grammer checker
 " Command to get LanguageTool: wget https://languagetool.org/download/LanguageTool-5.9.zip
