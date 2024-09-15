@@ -114,6 +114,9 @@ bindsym $mod+a focus parent
 bindsym Print exec import -window root ~/`date +"%Y%m%d_%H%M%S.png"`
 bindsym Shift+Print --release exec --no-startup-id import ~/`date +"%Y%m%d_%H%M%S.png"`
 
+#make a voice recording
+bindsym $mod+Shift+m exec $HOME/.local/kitty.app/bin/kitty rec `date +"%Y%m%d_%H%M%S.wav"`
+
 #changes wallpaper
 bindsym $mod+Shift+b exec --no-startup-id nitrogen --restore
 
