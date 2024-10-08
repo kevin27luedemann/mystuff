@@ -1,0 +1,7 @@
+default_profile = "user"
+
+[profiles.user]
+	user_id = "@kluedem1:gwdg.de"
+	url = "https://matrix.gwdg.de"
+[settings]
+image_preview = {}

@@ -66,6 +66,9 @@ export PATH=$HOME/.screenlayout:$PATH
 #go installation
 export PATH=$PATH:/home/kevin/software/go/bin
 
+#cargo bin path
+export PATH=$PATH:/home/kevin/.cargo/bin
+
 #kitty
 #kitten ssh
 alias kssh="kitty +kitten ssh"
