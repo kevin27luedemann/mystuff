@@ -1,7 +1,12 @@
 default_profile = "user"
 
+[settings]
+	image_preview = {}
+
+[settings.notifications]
+	enabled = true
+	show_message = true
+
 [profiles.user]
 	user_id = "@kluedem1:gwdg.de"
 	url = "https://matrix.gwdg.de"
-[settings]
-image_preview = {}
