@@ -98,6 +98,14 @@ if has("autocmd")
 		\ set autoindent |
 		\ set expandtab |
 		\ set foldmethod=manual |
+	autocmd BufNewFile,BufRead *.de.md
+		\ set spell |
+		\ set spelllang=de |
+		\ set tabstop=4 |
+		\ set shiftwidth=4 |
+		\ set autoindent |
+		\ set expandtab |
+		\ set foldmethod=manual |
 	autocmd BufNewFile,BufRead COMMIT_EDITMSG
 		\ set spell |
 		\ set tabstop=4 |
