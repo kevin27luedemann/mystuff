@@ -32,6 +32,9 @@ Plugin 'mattn/calendar-vim'
 " Table math options
 Plugin 'dhruvasagar/vim-table-mode'
 
+" taskwarrior plugin for vimwiki
+"Plugin 'tools-life/taskwiki'
+
 call vundle#end()     " required
 filetype plugin on    " required
 
@@ -40,7 +43,7 @@ filetype plugin on    " required
 " let g:vimwiki_table_auto_fmt=0
 
 " For Grammer checker
-" Command to get LanguageTool: wget https://languagetool.org/download/LanguageTool-5.9.zip
+" Command to get LanguageTool: wget https://languagetool.org/download/LanguageTool-latest-Snapshot.zip
 let g:languagetool_jar='$HOME/LanguageTool-5.9/languagetool-commandline.jar'
 let g:languagetool_lang='en-US'
 
@@ -151,6 +154,12 @@ if has("autocmd")
 		\ set autoindent |
 		\ set expandtab |
 		\ set foldmethod=manual |
+	autocmd BufNewFile,BufRead *.tex
+		\ set spell |
+		\ set tabstop=4 |
+		\ set shiftwidth=4 |
+		\ set autoindent |
+		\ set expandtab |
 	autocmd FileType cuda set ft=cuda.cpp
 	autocmd BufNewFile,BufRead *.cu set filetype=cpp
 	" Load folds automatically
@@ -210,7 +219,7 @@ set ruler
 set showcmd
 set cursorline
 "color settings (make sure these are very high contrast)
-"colorscheme zellner
+colorscheme koehler
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "some makros for doing executive stuff
