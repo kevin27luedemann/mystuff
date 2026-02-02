@@ -69,6 +69,9 @@ export PATH=$PATH:/home/kevin/software/go/bin
 #cargo bin path
 export PATH=$PATH:/home/kevin/.cargo/bin
 
+#Set browser to brave
+export BROWSER="brave-browser"
+
 #kitty
 #kitten ssh
 alias kssh="kitty +kitten ssh"
