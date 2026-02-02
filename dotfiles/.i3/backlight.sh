@@ -11,7 +11,7 @@ elif [ "$HOSTNAME" = "framework" ]; then
 	elif [ "$1" = "inc" ]; then
 		light -A $2
 	fi
-elif [ "$HOSTNAME" = "kevin-Latitude-7420" ]; then
+elif [ "$HOSTNAME" = "kevin-latitude7420" ]; then
 	if [ "$1" = "dec" ]; then
 		light -U $2
 	elif [ "$1" = "inc" ]; then
