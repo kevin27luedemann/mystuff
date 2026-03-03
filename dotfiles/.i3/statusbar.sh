@@ -30,13 +30,5 @@ do
 		volume=${volume%]*}
 		volume=${volume%]*}
 	fi
-	percent=`mpc status | grep "([0-9]"`
-	if [ ! -z "$percent" ]
-	then
-		percent="(${percent#*(} |"
-	fi
-	#echo "`mpc current` $percent vol: $volume | $line" || exit 1
 	echo "$percent vol: $volume | $line" || exit 1
-	#use the spotifycli client
-	#echo "`spotifycli --playbackstatus` `spotifycli --status` | vol: $volume | $line" || exit 1
 done
