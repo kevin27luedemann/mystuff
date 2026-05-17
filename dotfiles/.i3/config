@@ -128,16 +128,18 @@ bindsym $sub+Shift+d exec --no-startup-id $HOME/.screenlayout/right.sh
 
 #Volume controll
 bindcode 121 exec --no-startup-id ~/.i3/muting.sh
-bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-
-bindcode 123 exec --no-startup-id amixer -c 1 set Master 2%+
+#bindcode 122 exec --no-startup-id amixer -c 1 set Master 2%-
+#bindcode 123 exec --no-startup-id amixer -c 1 set Master 2%+
+bindcode 122 exec --no-startup-id ~/.i3/dec-vol.sh
+bindcode 123 exec --no-startup-id ~/.i3/inc-vol.sh
 
 bindsym $mod+numbersign exec --no-startup-id ~/.i3/muting.sh
-bindsym $mod+minus exec --no-startup-id amixer -c 0 set Master 2%-
-bindsym $mod+plus exec --no-startup-id amixer -c 0 set Master 2%+
+bindsym $mod+minus exec --no-startup-id ~/.i3/dec-vol.sh
+bindsym $mod+plus exec --no-startup-id ~/.i3/inc-vol.sh
 
 bindsym $sub+Shift+y exec --no-startup-id ~/.i3/muting.sh
-bindsym $sub+less exec --no-startup-id amixer -c 1 set Master 2%-
-bindsym $sub+Shift+less exec --no-startup-id amixer -c 1 set Master 2%+
+bindsym $sub+less exec --no-startup-id ~/.i3/dec-vol.sh
+bindsym $sub+Shift+less exec --no-startup-id ~/.i3/inc-vol.sh
 
 #Backlight brightness
 bindcode 232 exec --no-startup-id $HOME/.i3/backlight.sh dec 5
@@ -257,17 +259,18 @@ bar {
 for_window [class="Gtick"] border normal 3
 for_window [class="Gtick"] floating enable
 
-##border indicator on windows:
-#new_window pixel 1
-#
-## Set inner/outer gaps
-#gaps inner 6
-#gaps outer 3
+# Set inner/outer gaps
+smart_gaps on
+gaps inner 6px
+gaps outer 3px
+
+# Mouse warping for moving windows and screens around
+mouse_warping output
 
 # Start up and restart behaviour
 exec_always --no-startup-id feh --bg-max $HOME/Documents/mystuff/logo_design/Logo_design.png
 exec_always --no-startup-id picom --config ~/.config/picom.conf
+exec --no-startup-id /home/luedemann/Downloads/nextcloud/Nextcloud-3.16.4-x86_64.AppImage
 exec --no-startup-id nextcloud
-exec --no-startup-id owncloud
 exec --no-startup-id $HOME/.i3/autolock.sh
 exec $HOME/.screenlayout/start.sh

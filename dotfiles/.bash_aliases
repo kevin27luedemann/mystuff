@@ -30,7 +30,7 @@ alias sshhometunnel='ssh -X -A -L 127.0.0.1:2727:192.168.2.180:8888 luedemann@ke
 alias brenne="/home/luedemann/projekte/bootloader/lboot/bootloader -d /dev/ttyUSB0 -b 115200 -p"
 
 #Read Mensa data from web page
-alias mensa="w3m -dump 'https://nordmensa.de/?mensa=z' -cols 120"
+alias mensa="w3m -dump 'https://nordmensa.de/?mensa=cgin' -cols 120"
 
 function r {
 if ! screen -list | grep -q "running$1"
@@ -68,6 +68,9 @@ export PATH=$PATH:/home/kevin/software/go/bin
 
 #cargo bin path
 export PATH=$PATH:/home/kevin/.cargo/bin
+
+#Set browser to brave
+export BROWSER="brave-browser"
 
 #kitty
 #kitten ssh
