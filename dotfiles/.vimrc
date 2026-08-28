@@ -217,6 +217,12 @@ vnoremap <c-s> <Esc>
 set backspace=2
 
 "++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"Highlilghting training whitespaces
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+
+"++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "general settings
 syntax on
 set encoding=utf-8

@@ -166,3 +166,6 @@ export PATH="$HOME/gems/bin:$PATH"
 CONDASH=$HOME/miniconda3/etc/profile.d/conda.sh
 # <<< conda initialize <<<
 
+
+# opencode
+export PATH=/home/kevin/.opencode/bin:$PATH
