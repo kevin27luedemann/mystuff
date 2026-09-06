@@ -56,8 +56,8 @@ bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun \
 		-config ~/.config/rofi/rofidmenu.rasi
 
 # Launch the browser app
-bindsym $mod+b exec brave-browser
-bindsym $mod+$sub+b exec brave-browser --incognito
+bindsym $mod+b exec --no-startup-id brave-browser
+bindsym $mod+$sub+b exec --no-startup-id brave-browser --incognito --start-maximized
 
 # change focus
 bindsym $mod+h focus left
