@@ -16,14 +16,7 @@ do
 		volume=${volume%]*}
 		volume=${volume%]*}
 		volume=${volume%]*}
-	elif [ "$HOSTNAME" == "geosoft" ] || [ "$HOSTNAME" == "AGC-kevin" ]; then
-		volume=`amixer -M -c 0 get Master | grep "Mono: Playback"`
-		volume=${volume#*[}
-		volume=${volume%]*}
-		volume=${volume%]*}
-		volume=${volume%]*}
 	else
-		#volume=`amixer -M -c 1 get Master | grep "Mono: Playback"`
 		volume=`amixer -M -c 0 get Master | grep "Left:"`
 		volume=${volume#*[}
 		volume=${volume%]*}
